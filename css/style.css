@@ -1,6 +1,7 @@
-/* * // general */ */
+@import url(font-awesome.min.css);
+/* * // general */ 
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Helvetica,Arial sans-serif;
     padding: 0px;
     margin: 0px;
     text-align: justify;
@@ -29,12 +30,7 @@ ul {
 
 a {
     text-decoration: none;
-    
-}
-
-button {
-    border: none;
-    background: none;
+    color: black;
 }
 
 /* div telechargeable */
@@ -43,3 +39,93 @@ h1{
 
 }
 
+.container{
+    padding: 0;
+}
+.header{
+display: flex;
+flex-direction: column;
+margin-bottom:5px ;
+padding:10px 15px ;
+}
+
+.title{
+ font-size: 40px;
+ text-align: start;
+ margin-bottom: 5px;
+}
+
+.filter-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.btn-list{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.btn{
+    color:white;
+    background-color: #560BAD;
+    padding: 5px 20px;
+    font-size: 25px;
+    border-radius: 35px;
+    border: none;
+}
+.search-btn{
+    color: #560BAD;
+    font-size: 25px;
+    border:none ;
+    background: none;
+}
+.search-bar{
+    border:2px solid #560BAD;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 5px 20px;
+}
+@media screen and (min-width: 768px) {
+    .header{
+        padding:50px;
+    }
+    .filter-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-list{
+        margin: 0;
+        gap: 10px;
+    }
+    .search-btn{
+        display: none;
+    }
+
+}
+
+.avalaible-course{
+    
+    background-color:rgba(86, 11, 173, 0.18) ;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+.course-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.course{
+    background-color:#FFF ;
+    width: 325px;
+    height:200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+}
