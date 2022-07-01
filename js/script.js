@@ -29,17 +29,8 @@ document.getElementById("everything").addEventListener("click",function (event){
 
 
 
+//Search-bar keyword filter
 
-// const searchInput = document.querySelector("[data-search]");
-// let subjects = [];
-
-// searchInput.addEventListener("input", e => {
-//     const value = e.target.value
-//     console.log(value)
-// })
-
-
-// JavaScript code
 function searchSubject() {
     let input = document.getElementById('search-bar').value
     input=input.toLowerCase();
