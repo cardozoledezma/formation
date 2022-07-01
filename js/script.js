@@ -28,3 +28,29 @@ document.getElementById("everything").addEventListener("click",function (event){
 
 
 
+
+
+// const searchInput = document.querySelector("[data-search]");
+// let subjects = [];
+
+// searchInput.addEventListener("input", e => {
+//     const value = e.target.value
+//     console.log(value)
+// })
+
+
+// JavaScript code
+function searchSubject() {
+    let input = document.getElementById('search-bar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('course');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="course-list";                 
+        }
+    }
+}
