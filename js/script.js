@@ -24,3 +24,7 @@ document.getElementById("everything").addEventListener("click",function (event){
     for (const course of courseList.children) {
         course.classList.remove("hide")
 }})
+
+
+
+
