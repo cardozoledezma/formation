@@ -2,7 +2,12 @@ document.getElementById("filter-btn").addEventListener("click",function (event){
     document.getElementById("filter-list").classList.toggle("active")
 
 })
+
+
 const courseList = document.getElementById("course-list")
+
+
+`<li><a class="filter" href="">Javascript</a></li>`
 
 for (const filter of document.querySelectorAll(".filter")) {
    
