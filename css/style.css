@@ -73,11 +73,22 @@ padding:10px 15px ;
     position: relative;
     display: inline-block;
 }
+.btn1{
+    position: relative;
+    display: inline-block;
+}
 .filter-list{
     display: none;
     position: absolute;
     z-index: 1;   
 }
+
+.sort-list{
+    display: none;
+    position: absolute;
+    z-index: 1;   
+}
+
 .filter-link{
     color: black;
     padding: 12px 16px;
@@ -90,6 +101,12 @@ padding:10px 15px ;
     justify-content: space-around;
     margin-bottom: 10px;
 }
+.btn-list1{
+    display: flex;
+    
+    margin-bottom: 10px;
+}
+
 .btn{
     color:white;
     background-color: #560BAD;
