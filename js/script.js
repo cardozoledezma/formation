@@ -24,3 +24,26 @@ document.getElementById("everything").addEventListener("click",function (event){
     for (const course of courseList.children) {
         course.classList.remove("hide")
 }})
+
+
+
+
+
+//Search-bar keyword filter
+
+function searchBar() {
+    var input, filter, ul, li, a, txtValue;
+    input = document.getElementById("search-bar");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("course-list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
