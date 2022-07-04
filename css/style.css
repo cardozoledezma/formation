@@ -150,7 +150,7 @@ padding:10px 15px ;
 }
 
 .div-course{
-    background-color:#94dfa6 ;
+    background-color:#DECAED ;
     display: flex;
     justify-content:left;
     align-items: center;
@@ -173,13 +173,13 @@ padding:10px 15px ;
 .course-title {
  
     margin-bottom: 20px;
-
+    color: #560BAD;
 
 }
 
 .course-description{
 
-   
+    color: #560BAD;
  
 
 }
