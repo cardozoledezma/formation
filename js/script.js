@@ -33,9 +33,9 @@ for (const filter of document.querySelectorAll(".filter")) {
 
         for (const course of courseList) {
             console.log(course, course.dataset.subject)
-            if (filter.innerHTML != course.dataset.subject) {
+            if (!course.dataset.subject.split(" ").includes(filter.innerHTML)) {
                 course.classList.add("hide")
-            } if (filter.innerHTML == course.dataset.subject) {
+            } if (course.dataset.subject.split(" ").includes(filter.innerHTML)) {
                 course.classList.remove("hide")
             }
         };
