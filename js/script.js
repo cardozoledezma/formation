@@ -57,19 +57,14 @@ document.getElementById("everything").addEventListener("click", function (event)
 
  const sortBtn = document.querySelector("#sort-btn");
     sortBtn.addEventListener("click", function(event){
-        document.getElementById("sort-list").classList.toggle("active")
-
-                
-           
+        document.getElementById("sort-list").classList.toggle("active")         
 
     })
 
       const orderBtn = document.getElementById("croissant")
       orderBtn.addEventListener("click", function (event){
+        event.preventDefault()
 
-      
-
-     
     const sortedCourse = Array.from(courseList).sort(function(a,b){
         const ma = new Date(a.dataset.date)
         const mb = new Date (b.dataset.date)
@@ -84,12 +79,9 @@ document.getElementById("everything").addEventListener("click", function (event)
  
         });
     })
-
-
-
     const decroisantBtn = document.getElementById("decroisant")
     decroisantBtn.addEventListener("click", function (event){
-
+        event.preventDefault()
         const sortedCourse1 = Array.from(courseList).sort(function(a,b){
             const ma = new Date(a.dataset.date)
             const mb = new Date (b.dataset.date)
