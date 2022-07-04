@@ -78,13 +78,6 @@ padding:10px 15px ;
     position: absolute;
     z-index: 1;   
 }
-.active{
-    display:block ;
-}
-
-.hide{
-    display: none;
-}
 .filter-link{
     color: black;
     padding: 12px 16px;
@@ -117,6 +110,7 @@ padding:10px 15px ;
     font-size: 25px;
     padding: 5px 20px;
 }
+
 @media screen and (min-width: 768px) {
     .header{
         padding:50px;
@@ -240,4 +234,10 @@ padding:10px 15px ;
     }
 }
 
+.active{
+    display:block ;
+}
 
+.hide{
+    display: none;
+}
