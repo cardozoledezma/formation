@@ -11,23 +11,20 @@ let filterList=[]
 
 for (const course of courseList) {
    
-    for (const info of course.dataset.info.split(" ")) {
-        
-        filterList.push(info)
-
-    
+    for (const info of course.dataset.subject.split(" ")) {
+        if (!filterList.includes(info)){
+             filterList.push(info)
+        }
         
         
     } 
 }
-function checkWord(info){
 
-}
+filterList.forEach(filter => {
+  document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`   
+});
+
 console.log(filterList);
-//console.log( Object.values(document.querySelectorAll("#filter-list .filter")))
-
-// Object.values(document.querySelectorAll("#filter-list .filter")).
-//document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${info}</a></li>` 
 
 for (const filter of document.querySelectorAll(".filter")) {
 
