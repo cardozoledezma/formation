@@ -39,6 +39,7 @@ h1{
 
 }
 
+
 .container{
     padding: 0;
     height: 100vh;
@@ -81,21 +82,14 @@ padding:10px 15px ;
     position: absolute;
     z-index: 1;   
 }
-.active{
-    display:block ;
-}
+
 .sort-list{
     display: none;
     position: absolute;
     z-index: 1;   
 }
-.active{
-    display:block ;
-}
 
-.hide{
-    display: none;
-}
+
 .filter-link{
     color: black;
     padding: 12px 16px;
@@ -134,6 +128,7 @@ padding:10px 15px ;
     font-size: 25px;
     padding: 5px 20px;
 }
+
 @media screen and (min-width: 768px) {
     .header{
         padding:50px;
@@ -155,6 +150,42 @@ padding:10px 15px ;
 
 }
 
+.div-course{
+    background-color:#94dfa6 ;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    border-radius: 10px;
+  
+}
+
+
+ .course-content{
+
+    height: 10%;
+    align-self: flex-start;
+    width: 50%;
+    padding: 2px;
+} 
+
+.course-title {
+ 
+    margin-bottom: 20px;
+
+
+}
+
+.course-description{
+
+   
+ 
+
+}
+
+
 .avalaible-course{
     
     background-color:rgba(86, 11, 173, 0.18) ;
@@ -165,18 +196,25 @@ padding:10px 15px ;
 .course-list{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    padding-bottom: 1vw;
+   
+
 }
 
 .course{
+    display: flex;
     background-color:#FFF ;
-    width: 325px;
+    width: 80%;
     height:200px;
     border-radius: 10px;
     box-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    
 }
+
 .link{
     display: block;
     margin: auto 0;
@@ -186,14 +224,38 @@ padding:10px 15px ;
 }
 @media screen and (min-width: 768px) {
     .avalaible-course{
-        padding: 50px 30px;
+        padding: 30px 30px;
         margin-bottom: 50px;
-        height: 80%;
+        padding-bottom: 1vw;
+    
     }
     .course-list{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 30px;
+        gap: 15px;
     }
+    .course{
+        align-items: center;
+        gap: 10px;
+    }
+    .course-content{
+
+        height: 50%;
+        align-self: flex-start;
+        width: 100%;
+        padding: 5px;
+    }
+    .div-course{
+        flex-direction: row;
+      
+    }
+}
+
+.active{
+    display:block ;
+}
+
+.hide{
+    display: none;
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="/img/afpaimg.PNG">
+    <link rel="icon" type="image/png" href="img/afpaimg.PNG">
     <title>Les Cours de la Formation</title>
 </head>
 
@@ -21,11 +21,7 @@
             <button id="filter-btn" class="btn">Filtrer</button>
             <ul id="filter-list" class="filter-list">
                 <li><a id="everything" href="">tous les cours</a></li>  
-                <li><a class="filter" href="">Javascript</a></li>
-                    <li><a class="filter" href="">Github</a></li>
-                    <li><a class="filter" href="">Gestion</a></li>  
-                </ul>
-            <div class="btn-list1">   
+               
             </div>
             <button id="sort-btn" class="btn" >Trier</button>
             <ul id="sort-list" class="sort-list">
@@ -35,23 +31,116 @@
             
             <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
-            <input class="search-bar" type="text" placeholder="javascript">
+            <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
         </div>
     </header>
         <main class="avalaible-course">
             <ul id="course-list" class="course-list">
-                <li class="course" data-date="2022/04/07" data-subject="Github" ><a class="link" href="/downloads/Git__Github.pdf"download="Git-Github">Git - Github</a></li>
-                <li class="course" data-date="2022/06/22" data-subject="Github" ><a class="link" href="/downloads/github-aide_mémoire-documentation.pdf"download="github-aide-mémoire-documentation">Github - aide mémoire documentation</a></li>
-                <li class="course" data-date="2022/06/14" data-subject="Javascript" ><a class="link"href="/downloads/mod01_-_Les_variables_et_les_conditions.pdf"download="Les-variables-et-les-conditions">Les variables et les conditions</a></li>
-                <li class="course" data-date="2022/05/08" data-subject="Javascript" ><a class="link" href="/downloads/mod04_-_Le_DOM_et_la_dynamisation_des_pages_web.pdf" download="Le-DOM-et-la-dynamisation-des-pages-web">Le DOM et la dynamisation des pages web</a></li>
-                <li class="course" data-date="2022/04/15" data-subject="Javascript" ><a class="link" href="/downloads/mod05_-_Persistance_des_donnees_et_API (1).pdf"download="Persistance-des-donnees-et-API">Persistance des donnees et API</a></li>
-                <li class="course" data-date="2022/06/18" data-subject="Gestion" ><a class="link" href="/downloads/Scrum.pdf" download="Scrum">Scrum</a></li>
+                <li class="course" data-subject="Github" data-link="modul-1">
+                    <div class="div-course" >
+                        <a class="link" href="/download/git-et-github.pdf" download="Git-Github">Git & Github</a>
+                    </div> 
+                        <div class="course-content">
+                            <h2 class="course-title">Javascript</h2>
+                            <p class="course-description">Description</p>
+                        </div>
+                </li>                                  
+                <li class="course" data-subject="Github" data-date="2022/04/07">
+                    <div class="div-course" > 
+                        <a class="link" href="/download/github-aide_mémoire-documentation.pdf" download="Git aide mémoire">Aide mémoire Git</a>
+                    </div>
+                        <div class="course-content">
+                            <h2 class="course-title">Javascript</h2>
+                            <p class="course-description">Description</p>
+                        </div>
+                </li>           
+                <li class="course" data-subject="Scrum" data-date="2022/06/22">
+                    <div class="div-course" >
+                        <a class="link" href="/download/introduction-au-scrum.pdf" download="introduction-au-scrum">Introduction au Scrum</a>
+                    </div>
+                        <div class="course-content">
+                            <h2 class="course-title">Javascript</h2>
+                            <p class="course-description">Description</p>
+                        </div>
+                </li>        
+                <li class="course" data-subject="SEO" data-date="2022/06/14">
+                        <div class="div-course" >
+                            <a class="link" href="/download/introduction-au-seo.pdf" download="introduction-au-seo">Introduction au SEO</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>         
+                <li class="course" data-subject="javascript" data-date="2022/05/08">
+                        <div class="div-course" >
+                            <a class="link" href="/download/javascript-mod1-variables-conditions.pdf" download="javascript-mod1-variables-conditions">Javascript#1 - Variables et conditions</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>           
+                <li class="course" data-subject="javascript" data-date="2022/04/15">
+                        <div class="div-course" >
+                            <a class="link" href="/download/javascript-mod2-tableaux-objets-boucles.pdf" download="javascript-mod2-tableaux-objets-boucles">Javascript#2 - Tableaux, objets et boucles</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>           
+                <li class="course" data-subject="javascript" data-date="2022/06/18">
+                        <div class="div-course" >
+                            <a class="link" href="/download/javascript-mod3-fonctions.pdf" download="javascript-mod3-fonctions">Javascript#3 - Fonctions</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate maxime eaque magnam tempora vel rem, culpa facilis tempore quas excepturi asperiores fugit illum voluptatum consectetur dolorem laborum. Eum, assumenda culpa!</p>
+                            </div>
+                </li>         
+                <li class="course" data-subject="javascript" data-date="2022/06/20">
+                        <div class="div-course" >
+                            <a class="link" href="/download/javascript-mod4-dom.pdf" download="javascript-mod4-dom">Javascript#4 - Le DOM</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>         
+                <li class="course" data-subject="javascript" data-date="2022/07/18">
+                        <div class="div-course" >
+                            <a class="link" href="/download/javascript-mod5-persistances-et-api.pdf" download="javascript-mod5-persistances-et-api">Javascript#5 - Persistance des données et API</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>         
+                <li class="course" data-subject="CSS" data-date="2022/07/04">
+                        <div class="div-course" >
+                             <a class="link" href="/download/selecteurs-css.pdf" download="selecteurs-css">Les sélections CSS</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>          
+                <li class="course" data-subject="Technique" data-date="2022/04/26">
+                        <div class="div-course" >
+                            <a class="link" href="/download/serveur-web-publier-un-site-web.pdf" download="serveur-web-publier-un-site-web">Serveur seb et Publier un site web</a>
+                        </div>
+                            <div class="course-content">
+                                <h2 class="course-title">Javascript</h2>
+                                <p class="course-description">Description</p>
+                            </div>
+                </li>
             </ul>
     </main>
     <footer>
 
     </footer>
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 
 </html>
