@@ -15,29 +15,32 @@
         <div>
             <h1 class="title">Cours de la Formation</h1>
         </div>
-        <div class="filter-menu">
-            <div class="btn-list">
-            <div>
-            <button id="filter-btn" class="btn">Filtrer</button>
-            <ul id="filter-list" class="filter-list">
-                <li><a id="everything" href="">tous les cours</a></li>  
-               
-            </div>
-            <div>
-            <button id="sort-btn" class="btn" >Trier</button>
-            <ul id="sort-list" class="sort-list">
-                <li><a id="croissant" class="btn1" href="">ordre croissant</a></li>
-                <li><a id="decroisant" class="btn1" href=""> ordre decroissant</a></li>  
-                </ul>
-            </div>
-            
-            <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-            <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
-        </div>
     </header>
+    </section>
         <main class="avalaible-course">
             <section class="searching">
+                <div class="menu">
+                    <div class="filter-menu">
+                        <div class="btn-list">
+                        <div>
+                        <button id="filter-btn" class="btn">Filtrer</button>
+                        <ul id="filter-list" class="filter-list">
+                            <li><a id="everything" href="">tous les cours</a></li>  
+                           
+                        </div>
+                        <div>
+                        <button id="sort-btn" class="btn" >Trier</button>
+                        <ul id="sort-list" class="sort-list">
+                            <li><a id="croissant" class="btn1" href="">ordre croissant</a></li>
+                            <li><a id="decroisant" class="btn1" href=""> ordre decroissant</a></li>  
+                            </ul>
+                        </div>
+                        
+                        <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                        <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
+                    </div>
+                </div>
             </section>
             <ul id="course-list" class="course-list">
                 <li class="course" data-subject="Github Cours" data-date="2022/11/06">
