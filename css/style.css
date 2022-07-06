@@ -1,5 +1,14 @@
 @import url(font-awesome.min.css);
 /* * // general */ 
+
+:root {
+
+        /* Colors */
+        --primary-color: #DECAED;
+        --secondary-color: #560BAD;
+}
+
+
 *{
     font-family:  Helvetica,Arial sans-serif;
     padding: 0px;
@@ -44,12 +53,7 @@ h1{
     padding: 0;
     height: 100vh;
 }
-@media screen and (min-width: 768px) {
-    .container{
-       padding:0 40px 30px 40px  ; 
-    }
-    
-}
+
 .header{
 display: flex;
 flex-direction: column;
@@ -109,52 +113,32 @@ padding:10px 15px ;
 
 .btn{
     color:white;
-    background-color: #560BAD;
+    background-color: var(--secondary-color);
     padding: 5px 20px;
     font-size: 25px;
     border-radius: 35px;
     border: none;
 }
 .search-btn{
-    color: #560BAD;
+    color: var(--secondary-color);
     font-size: 25px;
     border:none ;
     background: none;
 }
 .search-bar{
-    border:2px solid #560BAD;
+    border:2px solid var(--secondary-color);
     border-radius: 20px;
     font-size: 25px;
     padding: 5px 20px;
 }
 
-@media screen and (min-width: 768px) {
-    .header{
-        padding:50px;
-    }
-    .filter-menu{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 10px;
-    }
-    .btn-list{
-        margin: 0;
-        gap: 10px;
-    }
-    .search-btn{
-        display: none;
-    }
-
-}
 
 .img-list{  
     width: 80px
 }
 
 .div-course{
-    background-color:#DECAED ;
+    background-color:var(--primary-color) ;
     display: flex;
     justify-content:left;
     align-items: center;
@@ -178,13 +162,13 @@ padding:10px 15px ;
 .course-title {
  
     margin-bottom: 20px;
-    color: #560BAD;
+    color: var(--secondary-color);
 
 }
 
 .course-description{
 
-    color: #560BAD;
+    color: var(--secondary-color);
  
 
 }
@@ -228,7 +212,46 @@ padding:10px 15px ;
     width: 100%;
     height: 100%;
 }
+
+@media  screen and (max-width: 767px) {
+    .container{
+        padding:0 40px 30px 40px  ; 
+     /* }
+    .course {
+        width: 35%;
+        flex-direction: column;
+        align-items:flex-start;
+        gap: 10px;
+         */
+    }
+    .course-description {
+        display: none;
+    }
+    /* .title{
+        font-size: 20px;
+        position: relative;
+       } */
+}
+
+
 @media screen and (min-width: 768px) {
+    .header{
+        padding:50px;
+    }
+    .filter-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-list{
+        margin: 0;
+        gap: 10px;
+    }
+    .search-btn{
+        display: none;
+    }
     .avalaible-course{
         padding: 30px 30px;
         margin-bottom: 50px;
@@ -254,7 +277,22 @@ padding:10px 15px ;
     }
     .div-course{
         flex-direction: row;
-      
+    }
+    .container{
+        padding:0 40px 30px 40px  ; 
+    }
+    .searching {
+        display: block;
+        flex-direction: column;    
+    }
+    .menu {
+        display: flex;
+    }
+    .searching {
+        display: flex;
+        flex-direction: column;
+        margin-bottom:5px ;
+        padding:10px 15px ;
     }
 }
 
