@@ -10,12 +10,7 @@
         "Github",
         "Cours"
     ],
-    "keywords":[
-        "Git",
-        "Github"
-    ],
-    "filetype":"pdf",
-    "image":""
+    "filetype":"pdf"
    },{
     "id":2,
     "name":"Github - Aide mémoire",
@@ -27,12 +22,7 @@
         "Github",
         "Cours"
     ],
-    "keywords":[
-        "Git",
-        "Github"
-    ],
-    "filetype":"pdf",
-    "image":""
+    "filetype":"pdf"
    },
    {
     "id":3,
@@ -41,87 +31,105 @@
     "date":"",
     "link":"downloads/Scrum.pdf",
     "subject":[
-        
+        "Scrum",
+        "Cours"
     ],
-    "keywords":[
-        
-    ],
-    "filetype":"",
-    "image":""
+    "filetype":"pdf"
    },
    {
-    "id":,
-    "name":"",
+    "id":4,
+    "name":"Introduction au SEO",
     "description":"",
     "date":"",
-    "link":"",
+    "link":"downloads/introduction-au-seo.pdf",
     "subject":[
-        
+        "SEO",
+        "Cours"
     ],
-    "keywords":[
-        
-    ],
-    "filetype":"",
-    "image":""
+    "filetype":"pdf"
    },
    {
-    "id":,
-    "name":"",
+    "id":5,
+    "name":"Javascript : module 1 - Les variables et conditions",
     "description":"",
     "date":"",
-    "link":"",
+    "link":"downloads/javascript-mod1-variables-conditions.pdf",
     "subject":[
-        
+        "Javascript",
+        "Cours"
     ],
-    "keywords":[
-        
-    ],
-    "filetype":"",
-    "image":""
+    "filetype":"pdf"
    },
    {
-    "id":,
-    "name":"",
+    "id":6,
+    "name":"Javascript : module 2 - tableaux,objets et boucles",
     "description":"",
     "date":"",
-    "link":"",
+    "link":"downloads/javascript-mod2-tableaux-objets-boucles.pdf",
     "subject":[
-        
+        "Javascript",
+        "Cours"
     ],
-    "keywords":[
-        
-    ],
-    "filetype":"",
-    "image":""
+    "filetype":"pdf"
    },
    {
-    "id":,
-    "name":"",
+    "id":7,
+    "name":"Javascript : module 3 - Les fonctions",
     "description":"",
     "date":"",
-    "link":"",
+    "link":"downloads/javascript-mod3-fonctions.pdf",
     "subject":[
-        
+        "Javascript",
+        "Cours"
     ],
-    "keywords":[
-        
-    ],
-    "filetype":"",
-    "image":""
+    "filetype":"pdf"
    },
    {
-    "id":,
-    "name":"",
+    "id":8,
+    "name":"Javascript : module 4 - Le DOM et la dynamisation des pages web",
     "description":"",
     "date":"",
-    "link":"",
+    "link":"downloads/javascript-mod4-dom.pdf",
     "subject":[
-        
+        "Javascript",
+        "Cours"
     ],
-    "keywords":[
-        
+    "filetype":"pdf"
+   },
+   {
+    "id":9,
+    "name":"Javascript : module 5 - Persistance des données et API",
+    "description":"",
+    "date":"",
+    "link":"downloads/javascript-mod5-persistances-et-api.pdf",
+    "subject":[
+        "Javascript",
+        "Cours"
     ],
-    "filetype":"",
-    "image":""
+    "filetype":"pdf"
+   },
+   {
+    "id":10,
+    "name":"CSS Les selecteurs",
+    "description":"",
+    "date":"",
+    "link":"downloads/selecteurs-css.pdf",
+    "subject":[
+        "CSS",
+        "Cours"
+    ],
+    "filetype":"pdf"
+   },
+   {
+    "id":11,
+    "name":"Serveur-web : Publier un site web",
+    "description":"",
+    "date":"",
+    "link":"downloads/serveur-web-publier-un-site-web",
+    "subject":[
+        "Technique",
+        "Cours"
+    ],
+    "filetype":"pdf"
    }
 ]
