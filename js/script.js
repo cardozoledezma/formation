@@ -61,7 +61,7 @@ document.getElementById("everything").addEventListener("click", function (event)
 
     })
 
-      const orderBtn = document.getElementById("croissant")
+const orderBtn = document.getElementById("decroisant")
       orderBtn.addEventListener("click", function (event){
         event.preventDefault()
 
@@ -75,11 +75,14 @@ document.getElementById("everything").addEventListener("click", function (event)
             const d = new Date (course.dataset.date)
             console.log(d);
             document.getElementById("course-list").appendChild(course)
-           
+            let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
+            document.querySelector(".course-date").innerHTML = display1;
+
+        
  
         });
     })
-    const decroisantBtn = document.getElementById("decroisant")
+const decroisantBtn = document.getElementById("croissant")
     decroisantBtn.addEventListener("click", function (event){
         event.preventDefault()
         const sortedCourse1 = Array.from(courseList).sort(function(a,b){
@@ -92,10 +95,13 @@ document.getElementById("everything").addEventListener("click", function (event)
                 const c = new Date (course.dataset.date)
                 console.log(c);
                 document.getElementById("course-list").appendChild(course)
-               
+                let display = (c.getFullYear() + "-" + (c.getMonth() + 1) + "-" + c.getDate())
+                document.querySelector(".course-date").innerHTML = display;
+
      
             });
-    
+        
+
         });
    
    
