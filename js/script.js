@@ -1,3 +1,32 @@
+let courses;
+let fileImg={
+    pdf:"img/pdf.png",
+    javascript:"img/js.png"
+}
+try {
+    fetch("datas/courses.json")
+        .then(response => response.json())
+        .then(json => {
+            courses = json;
+            displayCourses()
+        });
+} catch (error) {
+    console.error("error" + error);
+}
+
+function displayCourses(){
+    courses.forEach(course=>{
+        document.getElementById("course-list").innerHTML+=`<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p></div></li>`
+    })
+}
+
+
+    
+
+//
+
+
+//Selection programs
 document.getElementById("filter-btn").addEventListener("click", function (event) {
     document.getElementById("filter-list").classList.toggle("active")
    
