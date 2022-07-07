@@ -1,3 +1,37 @@
+let courses;
+let fileImg = {
+    pdf: "img/pdf.png",
+    javascript: "img/js.png"
+}
+try {
+    fetch("datas/courses.json")
+        .then(response => response.json())
+        .then(json => {
+            courses = json;
+            displayCourses()
+            displayFilterList(getFilterList())
+            manageClick()
+            sortByNewest()
+            sortByOldest()
+
+        });
+} catch (error) {
+    console.error("error" + error);
+}
+
+function displayCourses() {
+    courses.forEach(course => {
+        document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p></div></li>`
+    })
+}
+
+
+
+
+//
+
+
+//Selection programs
 
 let fi = document.getElementById("filter-btn");
 
@@ -10,42 +44,57 @@ if (fi) {
 
 const courseList = document.querySelectorAll("#course-list .course")
 
-let filterList=[]
 
-
-for (const course of courseList) {
-   
-    for (const info of course.dataset.subject.split(" ")) {
-        if (!filterList.includes(info)){
-             filterList.push(info)
-        }
-        
-        
-    } 
-}
-
-filterList.forEach(filter => {
-  document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`   
-});
-
-console.log(filterList);
-
-for (const filter of document.querySelectorAll(".filter")) {
-
-    filter.addEventListener("click", function (event) {
-        event.preventDefault()
-
-        for (const course of courseList) {
-            console.log(course, course.dataset.subject)
-            if (!course.dataset.subject.split(" ").includes(filter.innerHTML)) {
-                course.classList.add("hide")
-            } if (course.dataset.subject.split(" ").includes(filter.innerHTML)) {
-                course.classList.remove("hide")
+const filterList = []
+function getFilterList() {
+    courses.forEach(course => {
+        course.subject.forEach(info => {
+            if (!filterList.includes(info)) {
+                filterList.push(info)
             }
-        };
-
+        })
     })
+    return filterList
 }
+
+function displayFilterList(array) {
+    array.forEach(filter => {
+        document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`
+    });
+
+}
+
+function manageClick() {
+    for (const filter of document.querySelectorAll(".filter")) {
+        filter.addEventListener("click", function (event) {
+            event.preventDefault()  
+            getCoursesById(getIdBySubject(this.innerHTML))
+        })
+       
+    }
+}
+function getIdBySubject(filter){
+    return courses.filter(course=>course.subject.includes(filter)).map(course=>course.id)
+}
+
+function getCoursesById(array) {
+    document.querySelectorAll("#course-list .course").forEach(course=> {
+        console.log(course)
+        if (array.includes(parseInt(course.dataset.id))) {
+            course.classList.remove("hide")
+        }else {
+            course.classList.add("hide")
+        }
+    });
+}
+
+
+
+
+
+
+
+
 
 
 let ev = document.getElementById("everything");
@@ -72,16 +121,16 @@ if (sortBtn){
     })
 }
   
-
-const orderBtn = document.getElementById("decroisant")
+function sortByNewest(){
+const orderBtn = document.getElementById("croissant")
 if (orderBtn){
     
       orderBtn.addEventListener("click", function (event){
         event.preventDefault()
 
-    const sortedCourse = Array.from(courseList).sort(function(a,b){
+    const sortedCourse = Array.from( document.querySelectorAll("#course-list .course")).sort(function (a, b) {
         const ma = new Date(a.dataset.date)
-        const mb = new Date (b.dataset.date)
+        const mb = new Date(b.dataset.date)
         return mb.getTime() - ma.getTime()
      })
      
@@ -91,18 +140,16 @@ if (orderBtn){
             document.getElementById("course-list").appendChild(course)
             // let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
             // document.querySelector(".course-date").innerHTML = display1;
-
-        
- 
         });
       })
 }
-
-const decroisantBtn = document.getElementById("croissant");
-if (decroisantBtn){
-    decroisantBtn.addEventListener("click", function (event){
+}
+function sortByOldest(){
+const decroissantBtn = document.getElementById("decroissant");
+if (decroissantBtn){
+    decroissantBtn.addEventListener("click", function (event){
         event.preventDefault()
-        const sortedCourse1 = Array.from(courseList).sort(function(a,b){
+        const sortedCourse1 = Array.from(document.querySelectorAll("#course-list .course")).sort(function(a,b){
             const ma = new Date(a.dataset.date)
             const mb = new Date (b.dataset.date)
             return ma.getTime() - mb.getTime()
@@ -122,7 +169,7 @@ if (decroisantBtn){
         });
 }
    
- 
+}
    
    
  
