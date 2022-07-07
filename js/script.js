@@ -10,9 +10,10 @@ try {
             courses = json;
             displayCourses()
             displayFilterList(getFilterList())
-            manageClick()
+            manageCheckbox()
             sortByNewest()
             sortByOldest()
+            getActiveFilter()
 
         });
 } catch (error) {
@@ -59,27 +60,60 @@ function getFilterList() {
 
 function displayFilterList(array) {
     array.forEach(filter => {
-        document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`
+        document.getElementById("filter-list").innerHTML +=`<li ><input class="input" type="checkbox" id="${filter}" name="${filter}"><label for="${filter}">${filter}</label></li>`
     });
 
 }
 
-function manageClick() {
-    for (const filter of document.querySelectorAll(".filter")) {
-        filter.addEventListener("click", function (event) {
-            event.preventDefault()  
-            getCoursesById(getIdBySubject(this.innerHTML))
+function manageCheckbox() {
+    for (const filter of document.querySelectorAll("#filter-list .input")) {
+        filter.addEventListener("change", function (event) {
+            
+                getCoursesById(getIdBySubject())
+                console.log(this.name);
+            
+            
+            
         })
        
     }
 }
-function getIdBySubject(filter){
-    return courses.filter(course=>course.subject.includes(filter)).map(course=>course.id)
+
+function getActiveFilter(){
+    let activeFilter = []
+    for (const checkbox of document.querySelectorAll("#filter-list .input:checked")) {
+        
+        
+             if (!activeFilter.includes(`${checkbox.name}`)) {
+                activeFilter.push(checkbox.name)
+                
+            }else{
+                activeFilter.splice(activeFilter.indexOf(checkbox.name), 1)
+            }
+          
+    }  
+      return activeFilter 
+}
+
+function hasFilters(course,array) {
+   let i=0;
+   array.forEach(filter=>{
+       if (course.subject.includes(filter)) {
+        i++         
+    }
+   
+   })
+   return  (i++ == array.length) 
+    
+}
+
+function getIdBySubject(){
+    return courses.filter(course=>hasFilters(course,getActiveFilter())).map(course=>course.id)
 }
 
 function getCoursesById(array) {
     document.querySelectorAll("#course-list .course").forEach(course=> {
-        console.log(course)
+        
         if (array.includes(parseInt(course.dataset.id))) {
             course.classList.remove("hide")
         }else {
@@ -87,26 +121,6 @@ function getCoursesById(array) {
         }
     });
 }
-
-
-
-
-
-
-
-
-
-
-let ev = document.getElementById("everything");
-if(ev){
-    ev.addEventListener("click", function (event) {
-        for (const course of courseList.children) {
-            course.classList.remove("hide")
-    
-
-}})} 
-
-
 
 
 
@@ -138,8 +152,7 @@ if (orderBtn){
             const d = new Date (course.dataset.date)
             console.log(d);
             document.getElementById("course-list").appendChild(course)
-            // let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
-            // document.querySelector(".course-date").innerHTML = display1;
+
         });
       })
 }
@@ -158,11 +171,7 @@ if (decroissantBtn){
             sortedCourse1.forEach(course => {
                 const c = new Date (course.dataset.date)
                 console.log(c);
-                document.getElementById("course-list").appendChild(course)
-                // let display = (c.getFullYear() + "-" + (c.getMonth() + 1) + "-" + c.getDate())
-                // document.querySelector(".course-date").innerHTML = display;
-
-     
+                document.getElementById("course-list").appendChild(course)  
             });
         
 
@@ -176,20 +185,25 @@ if (decroissantBtn){
 //Search-bar keyword filter
 
 function searchBar() {
-    var input, filter, ul, li, a, txtValue;
+    let input, filter, ul, li, a, txtValue;
     input = document.getElementById("search-bar");
     filter = input.value.toUpperCase();
     ul = document.getElementById("course-list");
     li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("h2")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    let keywords = [];
+    keywords = filter.split(" ");
+    console.log(keywords);
+        keywords.forEach(keywords => {
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("h2")[0];
+            txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(keywords) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
         }
     }
+})
 }
 
 // burger

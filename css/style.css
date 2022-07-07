@@ -129,25 +129,6 @@ padding:10px 15px ;
     padding: 5px 20px;
 }
 
-@media screen and (min-width: 768px) {
-    .header{
-        padding:50px;
-    }
-    .filter-menu{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 10px;
-    }
-    .btn-list{
-        margin: 0;
-        gap: 10px;
-    }
-    .search-btn{
-        display: none;
-    }
-}
 /* main*/
     .avalaible-course{
         display: flex;
@@ -160,6 +141,7 @@ padding:10px 15px ;
 
 /*main list*/
     .course-list{
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;       
         gap: 15px;
