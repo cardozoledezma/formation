@@ -1,3 +1,38 @@
+let courses;
+let fileImg = {
+    pdf: "img/pdf.png",
+    javascript: "img/js.png"
+}
+try {
+    fetch("datas/courses.json")
+        .then(response => response.json())
+        .then(json => {
+            courses = json;
+            displayCourses()
+            displayFilterList(getFilterList())
+            manageCheckbox()
+            sortByNewest()
+            sortByOldest()
+            getActiveFilter()
+
+        });
+} catch (error) {
+    console.error("error" + error);
+}
+
+function displayCourses() {
+    courses.forEach(course => {
+        document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p></div></li>`
+    })
+}
+
+
+
+
+//
+
+
+//Selection programs
 
 let fi = document.getElementById("filter-btn");
 
@@ -10,54 +45,88 @@ if (fi) {
 
 const courseList = document.querySelectorAll("#course-list .course")
 
-let filterList=[]
 
-
-for (const course of courseList) {
-   
-    for (const info of course.dataset.subject.split(" ")) {
-        if (!filterList.includes(info)){
-             filterList.push(info)
-        }
-        
-        
-    } 
-}
-
-filterList.forEach(filter => {
-  document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`   
-});
-
-console.log(filterList);
-
-for (const filter of document.querySelectorAll(".filter")) {
-
-    filter.addEventListener("click", function (event) {
-        event.preventDefault()
-
-        for (const course of courseList) {
-            console.log(course, course.dataset.subject)
-            if (!course.dataset.subject.split(" ").includes(filter.innerHTML)) {
-                course.classList.add("hide")
-            } if (course.dataset.subject.split(" ").includes(filter.innerHTML)) {
-                course.classList.remove("hide")
+const filterList = []
+function getFilterList() {
+    courses.forEach(course => {
+        course.subject.forEach(info => {
+            if (!filterList.includes(info)) {
+                filterList.push(info)
             }
-        };
-
+        })
     })
+    return filterList
 }
 
+function displayFilterList(array) {
+    array.forEach(filter => {
+        //document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`
+        document.getElementById("filter-list").innerHTML +=`<li ><input class="input" type="checkbox" id="${filter}" name="${filter}"><label for="${filter}">${filter}</label></li>`
+    });
 
-let ev = document.getElementById("everything");
-if(ev){
-    ev.addEventListener("click", function (event) {
-        for (const course of courseList.children) {
-            course.classList.remove("hide")
+}
+
+function manageCheckbox() {
+    for (const filter of document.querySelectorAll("#filter-list .input")) {
+        filter.addEventListener("change", function (event) {
+            
+                getCoursesById(getIdBySubject())
+                console.log(this.name);
+            
+            
+            
+        })
+       
+    }
+}
+
+function getActiveFilter(){
+    let activeFilter = []
+    for (const checkbox of document.querySelectorAll("#filter-list .input:checked")) {
+        
+        
+             if (!activeFilter.includes(`${checkbox.name}`)) {
+                activeFilter.push(checkbox.name)
+                
+            }else{
+                activeFilter.splice(activeFilter.indexOf(checkbox.name), 1)
+            }
+
+        
+            // if (activeFilter.includes(`${checkbox.name}`)) {
+            // activeFilter.splice(activeFilter.indexOf(checkbox.name), 1)
+            // }
+      
+    }  
+      return activeFilter 
+}
+
+function hasFilters(course,array) {
+   let i=0;
+   array.forEach(filter=>{
+       if (course.subject.includes(filter)) {
+        i++         
+    }
+   
+   })
+   return  (i++ == array.length) 
     
+}
 
-}})} 
+function getIdBySubject(){
+    return courses.filter(course=>hasFilters(course,getActiveFilter())).map(course=>course.id)
+}
 
-
+function getCoursesById(array) {
+    document.querySelectorAll("#course-list .course").forEach(course=> {
+        
+        if (array.includes(parseInt(course.dataset.id))) {
+            course.classList.remove("hide")
+        }else {
+            course.classList.add("hide")
+        }
+    });
+}
 
 
 
@@ -72,16 +141,16 @@ if (sortBtn){
     })
 }
   
-
-const orderBtn = document.getElementById("decroisant")
+function sortByNewest(){
+const orderBtn = document.getElementById("croissant")
 if (orderBtn){
     
       orderBtn.addEventListener("click", function (event){
         event.preventDefault()
 
-    const sortedCourse = Array.from(courseList).sort(function(a,b){
+    const sortedCourse = Array.from( document.querySelectorAll("#course-list .course")).sort(function (a, b) {
         const ma = new Date(a.dataset.date)
-        const mb = new Date (b.dataset.date)
+        const mb = new Date(b.dataset.date)
         return mb.getTime() - ma.getTime()
      })
      
@@ -91,18 +160,16 @@ if (orderBtn){
             document.getElementById("course-list").appendChild(course)
             // let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
             // document.querySelector(".course-date").innerHTML = display1;
-
-        
- 
         });
       })
 }
-
-const decroisantBtn = document.getElementById("croissant");
-if (decroisantBtn){
-    decroisantBtn.addEventListener("click", function (event){
+}
+function sortByOldest(){
+const decroissantBtn = document.getElementById("decroissant");
+if (decroissantBtn){
+    decroissantBtn.addEventListener("click", function (event){
         event.preventDefault()
-        const sortedCourse1 = Array.from(courseList).sort(function(a,b){
+        const sortedCourse1 = Array.from(document.querySelectorAll("#course-list .course")).sort(function(a,b){
             const ma = new Date(a.dataset.date)
             const mb = new Date (b.dataset.date)
             return ma.getTime() - mb.getTime()
@@ -122,7 +189,7 @@ if (decroisantBtn){
         });
 }
    
- 
+}
    
    
  
@@ -167,9 +234,11 @@ function toggleNav(event) {
 }
 
 function resetNav() {
+    if (mainNav){
     mainNav.classList.remove("display");
     document.body.classList.remove("overflow");
     mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
+    }
 }
 
 if (mobileButton){  

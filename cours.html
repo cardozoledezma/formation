@@ -15,140 +15,30 @@
         <div>
             <h1 class="title">Cours de la Formation</h1>
         </div>
-        
+        <div class="filter-menu">
+            <div class="btn-list">
+            <div>
+            <button id="filter-btn" class="btn">Filtrer</button>
+            <ul id="filter-list" class="filter-list">
+               
+               
+            </div>
+            <div>
+            <button id="sort-btn" class="btn" >Trier</button>
+            <ul id="sort-list" class="sort-list">
+                <li><a id="croissant" class="btn1" href="">plus récent au plus ancien</a></li>
+                <li><a id="decroissant" class="btn1" href="">plus ancien au plus récent</a></li>  
+                </ul>
+            </div>
+            
+            <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
+        </div>
     </header>
         <main class="avalaible-course">
             <ul id="course-list" class="course-list">
-                <div class="filter-menu">
-                    <div class="btn-list">
-                    <div>
-                    <button id="filter-btn" class="btn">Filtrer</button>
-                    <ul id="filter-list" class="filter-list">
-                        <li><a id="everything" href="">tous les cours</a></li>  
-                       
-                    </div>
-                    <div>
-                    <button id="sort-btn" class="btn" >Trier</button>
-                    <ul id="sort-list" class="sort-list">
-                        <li><a id="croissant" class="btn1" href="">ordre croissant</a></li>
-                        <li><a id="decroisant" class="btn1" href=""> ordre decroissant</a></li>  
-                        </ul>
-                    </div>
-                    
-                    <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </div>
-                    <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
-                </div>
-                <li class="course" data-subject="Github Cours" data-date="2022/04/06">
-                    <div class="div-course" >
-                        <a class="link" href="downloads/git-et-github.pdf" download="Git-Github"  ><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                    </div> 
-                        <div class="course-content">
-                            <h2 class="course-title">Git & Github</h2>
-                            <p class="course-description">Description</p>
-                            <p class="course-description course-date">2022/04/06</p>
-                        </div>
-                </li>                                  
-                <li class="course" data-subject="Github Cours" data-date="2022/04/07">
-                    <div class="div-course" > 
-                        <a class="link" href="downloads/github-aide_mémoire-documentation.pdf" download="Git aide mémoire"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                    </div>
-                        <div class="course-content">
-                            <h2 class="course-title">Git : Aide mémoire</h2>
-                            <p class="course-description">Description</p>
-                            <p  class="course-description course-date">2022/04/07</p>
-                        </div>
-                </li>           
-                <li  class="course" data-subject="Scrum Cours" data-date="2022/06/22">
-                    <div class="div-course" >
-                        <a class="link" href="downloads/introduction-au-scrum.pdf" download="introduction-au-scrum"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                    </div>
-                        <div class="course-content">
-                            <h2 class="course-title">Introduction au Scrum</h2>
-                            <p class="course-description">Description</p>
-                            <p  class="course-description course-date">2022/06/22</p>
-                        </div>
-                </li>        
-                <li  class="course" data-subject="SEO Cours" data-date="2022/06/14">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/introduction-au-seo.pdf" download="Introduction au SEO"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Introduction au SEO</h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/06/14</p>
-                            </div>
-                </li>         
-                <li  class="course" data-subject="javascript Cours" data-date="2022/05/08">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/javascript-mod1-variables-conditions.pdf" download="javascript-mod1-variables-conditions"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Javascript : module 1 - Les variables et conditions</h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/05/08</p>
-                            </div>
-                </li>           
-                <li class="course" data-subject="javascript Cours" data-date="2022/04/15">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/javascript-mod2-tableaux-objets-boucles.pdf" download="javascript-mod2-tableaux-objets-boucles"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Javascript : module 2 - tableaux,objets et boucles</h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/04/15</p>
-                            </div>
-                </li>           
-                <li class="course" data-subject="javascript" data-date="2022/06/18">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/javascript-mod3-fonctions.pdf" download="javascript-mod3-fonctions"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Javascript : module 3 - Les fonctions</h2>
-                                <p class="course-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate maxime eaque magnam tempora vel rem, culpa facilis tempore quas excepturi asperiores fugit illum voluptatum consectetur dolorem laborum. Eum, assumenda culpa!</p>
-                                <p  class="course-description course-date">2022/06/18</p>
-                            </div>
-                </li>         
-                <li  class="course" data-subject="javascript Cours" data-date="2022/06/20">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/javascript-mod4-dom.pdf" download="javascript-mod4-dom"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Javascript : module 4 - Le DOM et la dynamisation des pages web</h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/06/20</p>
-                            </div>
-                </li>         
-                <li  class="course" data-subject="javascript Cours" data-date="2022/07/18">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/javascript-mod5-persistances-et-api.pdf" download="javascript-mod5-persistances-et-api"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Javascript : module 5 - Persistance des données et API</h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/07/18</p>
-                            </div>
-                </li>         
-                <li  class="course" data-subject="CSS Cours" data-date="2022/07/04">
-                        <div class="div-course" >
-                             <a class="link" href="downloads/selecteurs-css.pdf" download="selecteurs-css"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">CSS Les selecteurs </h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/07/04</p>
-                            </div>
-                </li>          
-                <li class="course" data-subject="Technique Cours" data-date="2022/04/26">
-                        <div class="div-course" >
-                            <a class="link" href="downloads/serveur-web-publier-un-site-web" download="serveur-web-publier-un-site-web"><img src="./img/pdf.png" alt="tu n'as pas de réseau branche ton cable !!!" class="img-list"></a>
-                        </div>
-                            <div class="course-content">
-                                <h2 class="course-title">Serveur-web : Publier un site web</h2>
-                                <p class="course-description">Description</p>
-                                <p  class="course-description course-date">2022/04/26</p>
-                            </div>
-                </li>
+               
             </ul>
     </main>
     <footer>
