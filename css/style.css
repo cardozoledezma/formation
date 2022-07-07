@@ -131,7 +131,7 @@ padding:10px 15px ;
     padding: 5px 20px;
 }
 
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
     .header{
         padding:50px;
     }
@@ -149,7 +149,7 @@ padding:10px 15px ;
     .search-btn{
         display: none;
     }
-}
+}*\
 /* main*/
     .avalaible-course{
         display: flex;
