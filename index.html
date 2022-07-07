@@ -1,49 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/afpaimg.PNG">
-    <title>Les Cours de la Formation</title>
+    <title>Web dev Formation</title>
 </head>
-
-<body class="container">
-    <header class="header">
-        <div>
-            <h1 class="title">Cours de la Formation</h1>
-        </div>
-        <div class="filter-menu">
-            <div class="btn-list">
-            <div>
-            <button id="filter-btn" class="btn">Filtrer</button>
-            <ul id="filter-list" class="filter-list">
-                <li><a id="everything" href="">tous les cours</a></li>  
-               
-            </div>
-            <div>
-            <button id="sort-btn" class="btn" >Trier</button>
-            <ul id="sort-list" class="sort-list">
-                <li><a id="croissant" class="btn1" href="">ordre croissant</a></li>
-                <li><a id="decroisant" class="btn1" href=""> ordre decroissant</a></li>  
-                </ul>
-            </div>
-            
-            <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-            <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
-        </div>
-    </header>
-        <main class="avalaible-course">
-            <ul id="course-list" class="course-list">
+<body>
+    <header class="home-header">
+    <div class="home-header-container home-container">
+        <h2 class="home-title">Web dev Formation</h1>
+        <nav class="navbar">
+            <ul id="main-nav" class="home-nav-list">
+                <li class="home-nav-item">
+                    <a class="home-nav-link" href="#">Accueil</a>
+                </li>
+                <li class="home-nav-item">
+                    <a class="home-nav-link" href="cours.html">Cours</a>
+                </li>
+                <li class="home-nav-item">
+                    <a class="home-nav-link" href="planning/planning.html">Planning</a>
+                </li>
             </ul>
+            <button id="mobile-button" class="home-nav-burger">
+                <i id="mobile-icon" class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </div>
+    </header>
+    <main>
+        <div class="home-container2">
+             <h1 class="home-title2">Plateforme de cours en ligne</h1>
+        </div>
+        <h3 class="home-title3">Projet</h3>
+        <div class="avalaible-projet">
+            <ul class="projets-list">
+                <li class="projet">
+                        <a class="" href="https://web-dev-formation.fr/weather/?#" ><h2 class="text3">Weather</h2></a>     
+                </li>
+                <li class="projet">
+                        <a class="" href="https://web-dev-formation.fr/dracostore/"><h2 class="text3">Dracostore</h2></a>                
+                </li>
+                <li class="projet">
+                    <a class="" href=""><h2 class="text3">CV</h2></a>
+                </li>
+                 <li class="projet">
+                    <a class="" href=""><h2 class="text3"></h2></a>
+                 </li>
+            </ul>
+        </div>
+        </div>
     </main>
     <footer>
 
     </footer>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
-
 </html>
