@@ -167,9 +167,11 @@ function toggleNav(event) {
 }
 
 function resetNav() {
+    if (mainNav){
     mainNav.classList.remove("display");
     document.body.classList.remove("overflow");
     mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
+    }
 }
 
 if (mobileButton){  
