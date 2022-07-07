@@ -191,7 +191,7 @@ function searchBar() {
     ul = document.getElementById("course-list");
     li = ul.getElementsByTagName("li");
     let keywords = [];
-    keywords = filter.split("  ");
+    keywords = filter.split(" ");
     console.log(keywords);
         keywords.forEach(keywords => {
         for (i = 0; i < li.length; i++) {
