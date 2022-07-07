@@ -244,6 +244,7 @@ padding:10px 15px ;
     
     }
     .course-list{
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
