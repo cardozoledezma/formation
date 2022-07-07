@@ -60,7 +60,6 @@ function getFilterList() {
 
 function displayFilterList(array) {
     array.forEach(filter => {
-        //document.getElementById("filter-list").innerHTML += `<li><a class="filter" href="">${filter}</a></li>`
         document.getElementById("filter-list").innerHTML +=`<li ><input class="input" type="checkbox" id="${filter}" name="${filter}"><label for="${filter}">${filter}</label></li>`
     });
 
@@ -91,12 +90,7 @@ function getActiveFilter(){
             }else{
                 activeFilter.splice(activeFilter.indexOf(checkbox.name), 1)
             }
-
-        
-            // if (activeFilter.includes(`${checkbox.name}`)) {
-            // activeFilter.splice(activeFilter.indexOf(checkbox.name), 1)
-            // }
-      
+          
     }  
       return activeFilter 
 }
@@ -158,8 +152,7 @@ if (orderBtn){
             const d = new Date (course.dataset.date)
             console.log(d);
             document.getElementById("course-list").appendChild(course)
-            // let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
-            // document.querySelector(".course-date").innerHTML = display1;
+
         });
       })
 }
@@ -178,11 +171,7 @@ if (decroissantBtn){
             sortedCourse1.forEach(course => {
                 const c = new Date (course.dataset.date)
                 console.log(c);
-                document.getElementById("course-list").appendChild(course)
-                // let display = (c.getFullYear() + "-" + (c.getMonth() + 1) + "-" + c.getDate())
-                // document.querySelector(".course-date").innerHTML = display;
-
-     
+                document.getElementById("course-list").appendChild(course)  
             });
         
 
@@ -196,20 +185,25 @@ if (decroissantBtn){
 //Search-bar keyword filter
 
 function searchBar() {
-    var input, filter, ul, li, a, txtValue;
+    let input, filter, ul, li, a, txtValue;
     input = document.getElementById("search-bar");
     filter = input.value.toUpperCase();
     ul = document.getElementById("course-list");
     li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("h2")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    let keywords = [];
+    keywords = filter.split("  ");
+    console.log(keywords);
+        keywords.forEach(keywords => {
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("h2")[0];
+            txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(keywords) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
         }
     }
+})
 }
 
 // burger
