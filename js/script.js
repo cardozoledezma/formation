@@ -11,7 +11,8 @@ try {
             displayCourses()
             displayFilterList(getFilterList())
             manageClick()
-            
+            sortByNewest()
+            sortByOldest()
 
         });
 } catch (error) {
@@ -20,7 +21,7 @@ try {
 
 function displayCourses() {
     courses.forEach(course => {
-        document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p></div></li>`
+        document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p></div></li>`
     })
 }
 
@@ -68,7 +69,6 @@ function manageClick() {
         filter.addEventListener("click", function (event) {
             event.preventDefault()  
             getCoursesById(getIdBySubject(this.innerHTML))
-            console.log(this.innerHTML)
         })
        
     }
@@ -78,8 +78,7 @@ function getIdBySubject(filter){
 }
 
 function getCoursesById(array) {
-    console.log(array)
-    courseList.forEach(course=> {
+    document.querySelectorAll("#course-list .course").forEach(course=> {
         console.log(course)
         if (array.includes(parseInt(course.dataset.id))) {
             course.classList.remove("hide")
@@ -122,14 +121,14 @@ if (sortBtn){
     })
 }
   
-
-const orderBtn = document.getElementById("decroisant")
+function sortByNewest(){
+const orderBtn = document.getElementById("croissant")
 if (orderBtn){
     
       orderBtn.addEventListener("click", function (event){
         event.preventDefault()
 
-    const sortedCourse = Array.from(courseList).sort(function (a, b) {
+    const sortedCourse = Array.from( document.querySelectorAll("#course-list .course")).sort(function (a, b) {
         const ma = new Date(a.dataset.date)
         const mb = new Date(b.dataset.date)
         return mb.getTime() - ma.getTime()
@@ -141,18 +140,16 @@ if (orderBtn){
             document.getElementById("course-list").appendChild(course)
             // let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
             // document.querySelector(".course-date").innerHTML = display1;
-
-        
- 
         });
       })
 }
-
-const decroisantBtn = document.getElementById("croissant");
-if (decroisantBtn){
-    decroisantBtn.addEventListener("click", function (event){
+}
+function sortByOldest(){
+const decroissantBtn = document.getElementById("decroissant");
+if (decroissantBtn){
+    decroissantBtn.addEventListener("click", function (event){
         event.preventDefault()
-        const sortedCourse1 = Array.from(courseList).sort(function(a,b){
+        const sortedCourse1 = Array.from(document.querySelectorAll("#course-list .course")).sort(function(a,b){
             const ma = new Date(a.dataset.date)
             const mb = new Date (b.dataset.date)
             return ma.getTime() - mb.getTime()
@@ -172,7 +169,7 @@ if (decroisantBtn){
         });
 }
    
- 
+}
    
    
  
