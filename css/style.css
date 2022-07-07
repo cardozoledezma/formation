@@ -457,6 +457,7 @@ padding:10px 15px ;
 .projet{
     display: flex;
     align-items: center;
+    text-align: center;
     width: 180px;
     height: 180px;
     padding: 30px;
