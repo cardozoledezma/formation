@@ -3,7 +3,7 @@
     "id":1,
     "name":"Git & Github",
     "description":"Description",
-    "date":"2022/11/06",
+    "date":"2022/06/15",
     "link":"downloads/Git__Github.pdf",
     "subject":[
         "Git",
@@ -15,7 +15,7 @@
     "id":2,
     "name":"Github - Aide mémoire",
     "description":"Description",
-    "date":"2022/11/06",
+    "date":"2022/06/15",
     "link":"downloads/github-aide_mémoire-documentation.pdf",
     "subject":[
         "Git",
@@ -28,7 +28,7 @@
     "id":3,
     "name":"Introduction au Scrum",
     "description":"Description",
-    "date":"2022/01/06",
+    "date":"2022/06/29",
     "link":"downloads/Scrum.pdf",
     "subject":[
         "Scrum",
@@ -40,7 +40,7 @@
     "id":4,
     "name":"Introduction au SEO",
     "description":"Description",
-    "date":"2022/11/26",
+    "date":"2022/06/21",
     "link":"downloads/introduction-au-seo.pdf",
     "subject":[
         "SEO",
@@ -52,7 +52,7 @@
     "id":5,
     "name":"Javascript : module 1 - Les variables et conditions",
     "description":"Description",
-    "date":"2022/10/06",
+    "date":"2022/05/20",
     "link":"downloads/javascript-mod1-variables-conditions.pdf",
     "subject":[
         "Javascript",
@@ -64,7 +64,7 @@
     "id":6,
     "name":"Javascript : module 2 - tableaux,objets et boucles",
     "description":"Description",
-    "date":"2022/05/06",
+    "date":"2022/05/23",
     "link":"downloads/javascript-mod2-tableaux-objets-boucles.pdf",
     "subject":[
         "Javascript",
@@ -76,7 +76,7 @@
     "id":7,
     "name":"Javascript : module 3 - Les fonctions",
     "description":"Description",
-    "date":"2022/12/06",
+    "date":"2022/05/28",
     "link":"downloads/javascript-mod3-fonctions.pdf",
     "subject":[
         "Javascript",
@@ -88,7 +88,7 @@
     "id":8,
     "name":"Javascript : module 4 - Le DOM et la dynamisation des pages web",
     "description":"Description",
-    "date":"2022/05/06",
+    "date":"2022/06/08",
     "link":"downloads/javascript-mod4-dom.pdf",
     "subject":[
         "Javascript",
@@ -100,7 +100,7 @@
     "id":9,
     "name":"Javascript : module 5 - Persistance des données et API",
     "description":"Description",
-    "date":"2022/01/06",
+    "date":"2022/06/23",
     "link":"downloads/javascript-mod5-persistances-et-api.pdf",
     "subject":[
         "Javascript",
@@ -112,7 +112,7 @@
     "id":10,
     "name":"CSS Les selecteurs",
     "description":"Description",
-    "date":"2022/04/06",
+    "date":"2022/06/14",
     "link":"downloads/selecteurs-css.pdf",
     "subject":[
         "CSS",
@@ -124,7 +124,7 @@
     "id":11,
     "name":"Serveur-web : Publier un site web",
     "description":"Description",
-    "date":"2022/07/06",
+    "date":"2022/06/23",
     "link":"downloads/serveur-web-publier-un-site-web",
     "subject":[
         "Technique",
