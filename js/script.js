@@ -1,7 +1,11 @@
-document.getElementById("filter-btn").addEventListener("click", function (event) {
+
+let fi = document.getElementById("filter-btn");
+
+if (fi) {
+    fi.addEventListener("click", function (event) {
     document.getElementById("filter-list").classList.toggle("active")
    
-})
+})}
 
 
 const courseList = document.querySelectorAll("#course-list .course")
@@ -43,10 +47,15 @@ for (const filter of document.querySelectorAll(".filter")) {
     })
 }
 
-document.getElementById("everything").addEventListener("click", function (event) {
-    for (const course of courseList.children) {
-        course.classList.remove("hide")
-}})
+
+let ev = document.getElementById("everything");
+if(ev){
+    ev.addEventListener("click", function (event) {
+        for (const course of courseList.children) {
+            course.classList.remove("hide")
+    
+
+}})} 
 
 
 
@@ -56,12 +65,17 @@ document.getElementById("everything").addEventListener("click", function (event)
 
 
  const sortBtn = document.querySelector("#sort-btn");
-    sortBtn.addEventListener("click", function(event){
-        document.getElementById("sort-list").classList.toggle("active")         
+if (sortBtn){
+    sortBtn.addEventListener("click", function (event) {
+        document.getElementById("sort-list").classList.toggle("active")
 
     })
+}
+  
 
 const orderBtn = document.getElementById("decroisant")
+if (orderBtn){
+    
       orderBtn.addEventListener("click", function (event){
         event.preventDefault()
 
@@ -75,14 +89,17 @@ const orderBtn = document.getElementById("decroisant")
             const d = new Date (course.dataset.date)
             console.log(d);
             document.getElementById("course-list").appendChild(course)
-            let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
-            document.querySelector(".course-date").innerHTML = display1;
+            // let display1 = (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
+            // document.querySelector(".course-date").innerHTML = display1;
 
         
  
         });
-    })
-const decroisantBtn = document.getElementById("croissant")
+      })
+}
+
+const decroisantBtn = document.getElementById("croissant");
+if (decroisantBtn){
     decroisantBtn.addEventListener("click", function (event){
         event.preventDefault()
         const sortedCourse1 = Array.from(courseList).sort(function(a,b){
@@ -95,15 +112,15 @@ const decroisantBtn = document.getElementById("croissant")
                 const c = new Date (course.dataset.date)
                 console.log(c);
                 document.getElementById("course-list").appendChild(course)
-                let display = (c.getFullYear() + "-" + (c.getMonth() + 1) + "-" + c.getDate())
-                document.querySelector(".course-date").innerHTML = display;
+                // let display = (c.getFullYear() + "-" + (c.getMonth() + 1) + "-" + c.getDate())
+                // document.querySelector(".course-date").innerHTML = display;
 
      
             });
         
 
         });
-   
+}
    
  
    
@@ -155,12 +172,13 @@ function resetNav() {
     mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
 }
 
+if (mobileButton){  
 mobileButton.addEventListener("click", toggleNav);
 
 mainNav.addEventListener("click", function (event) {
     if (event.target.hasAttribute("href")) toggleNav();
 })
-
+}
 window.addEventListener("resize", function (event) {
     if (window.innerWidth >= 768) resetNav();
 })
