@@ -47,6 +47,10 @@ h1{
 
 }
 
+.no-result{
+    display: none;
+}
+
 
 .container{
     padding: 0;
