@@ -15,6 +15,7 @@ try {
             sortByNewest()
             sortByOldest()
             getActiveFilter()
+       
 
         });
 } catch (error) {
@@ -217,15 +218,35 @@ function searchBar() {
     let keywords = [];
     keywords = filter.split(" ");
         
-        keywords.forEach(keywords => {
+    keywords.forEach(keywords => {
         for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("h2")[0];
             txtValue = a.textContent || a.innerText;
 
-        if (txtValue.toUpperCase().indexOf(keywords) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        };
-    }});
-};
+            if (txtValue.toUpperCase().indexOf(keywords) > -1) {
+                 li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    })
+    noResult();
+}
+
+function noResult(){
+    
+    let nbrCours = 0;
+    let list = document.querySelectorAll("#course-list .course")
+    list.forEach(cours => {
+        if(cours.style.display == "none"){
+            nbrCours++;
+        }
+        if(nbrCours == list.length){
+            document.getElementById("no-result").classList.add("active")
+        }else{
+            document.getElementById("no-result").classList.remove("active");
+        }
+      
+    })
+ 
+}
