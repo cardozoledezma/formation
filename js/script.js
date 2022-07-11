@@ -168,7 +168,7 @@ if (sortBtn){
 };
   
 function sortByNewest(){
-const orderBtn = document.getElementById("croissant")
+const orderBtn = document.getElementById("newest")
 if (orderBtn){
 
       orderBtn.addEventListener("click", function (event){
@@ -190,7 +190,7 @@ if (orderBtn){
 }};
 
 function sortByOldest(){
-const decroissantBtn = document.getElementById("decroissant");
+const decroissantBtn = document.getElementById("oldest");
 if (decroissantBtn){
     decroissantBtn.addEventListener("click", function (event){
         event.preventDefault()
