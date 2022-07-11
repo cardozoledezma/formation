@@ -60,7 +60,7 @@ a {
     align-items: center;
     padding: 1rem 2rem;
 }
-.home-title{
+.header-title{
     display: flex;
     align-items: center;
     margin-left: 1rem;
@@ -78,14 +78,14 @@ a {
 }
 
 
-.home-container2{
+.home-main-container{
     position: relative;
     align-items: center;
     z-index: -1;
     top: 150px;
 }
 
-.home-title2{
+.home-title{
     font-size: 3rem;
     color: #560BAD;
     text-align: center;
@@ -93,14 +93,14 @@ a {
 
 
 /* Project */   
-.home-title3{
+.container-title{
     margin: 10px;
     position: relative;
     top: 170px;
     color: #560BAD;
 }
 
-.avalaible-projet{
+.avalaible-projects{
     position: relative;
     top: 11em;
     padding: 20px 10px;
@@ -110,7 +110,7 @@ a {
     border-bottom: 1px solid black;
 }
 
-.projets-list{
+.list-of-projects{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -119,7 +119,7 @@ a {
     padding: 30px;
 }
 
-.projet{
+.project{
     display: flex;
     align-items: center;
     text-align: center;
@@ -130,7 +130,7 @@ a {
     border: 1px solid #560BAD;
 }
 
-.text3{
+.project-names{
     text-align:center;
 }
 
@@ -153,7 +153,7 @@ a {
     }
 
     .home-nav-list.display {
-        top: calc(5.8rem);
+        top: calc(6rem + 1px);
     }
 
     .home-nav-item {
@@ -170,7 +170,7 @@ a {
 /* DISPLAY DESKTOP */ 
 
 @media screen and (min-width: 768px) {
-    .projets-list {
+    .list-of-projects {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 15px;
