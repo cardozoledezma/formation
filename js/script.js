@@ -146,13 +146,14 @@ function getIdBySubject(){
 
 function getCoursesById(array) {
     document.querySelectorAll("#course-list .course").forEach(course=> {
-        
+        noResult()
         if (array.includes(parseInt(course.dataset.id))) {
             course.classList.remove("hide")
         }else {
             course.classList.add("hide")
         };
     });
+    noResult()
 };
 
 
@@ -224,9 +225,9 @@ function searchBar() {
             txtValue = a.textContent || a.innerText;
 
             if (txtValue.toUpperCase().indexOf(keywords) > -1) {
-                 li[i].style.display = "";
+                 li[i].classList.remove("hide");
             } else {
-                li[i].style.display = "none";
+                li[i].classList.add("hide");
             }
         }
     })
@@ -238,7 +239,7 @@ function noResult(){
     let nbrCours = 0;
     let list = document.querySelectorAll("#course-list .course")
     list.forEach(cours => {
-        if(cours.style.display == "none"){
+        if(cours.classList.contains("hide")){
             nbrCours++;
         }
         if(nbrCours == list.length){
