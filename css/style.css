@@ -87,6 +87,7 @@ a {
     background: none;
 }
 
+<<<<<<< HEAD
 .home-nav-link {
     color: var(--background-color);
 }
@@ -271,8 +272,12 @@ a {
 
 
 /* ONLINE COURSE PAGE */
+.no-result{
+    display: none;
+}
 
-.container {
+
+.container{
     padding: 0;
     height: 100vh;
 }

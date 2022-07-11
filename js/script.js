@@ -15,18 +15,19 @@ try {
             sortByNewest()
             sortByOldest()
             getActiveFilter()
+       
 
         });
 } catch (error) {
     console.error("error" + error);
-}
+};
 
 function displayCourses() {
     courses.forEach(course => {
        
         if (document.getElementById("course-list")){
             document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p></div></li>`;
-        }
+        };
     });
 };
 
@@ -41,42 +42,42 @@ function toggleBurger() {
         mobileIcon.classList.replace("fa-bars", "fa-chevron-up");
     } else {
         mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
-    }
-}
+    };
+};
 
 function toggleNav(event) {
     if (window.innerWidth >= 768) return;
     mainNav.classList.toggle("display");
     document.body.classList.toggle("overflow");
     toggleBurger();
-}
+};
 
 function resetNav() {
     if (mainNav) {
         mainNav.classList.remove("display");
         document.body.classList.remove("overflow");
         mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
-    }
-}
+    };
+};
 
 if (mobileButton) {
     mobileButton.addEventListener("click", toggleNav);
 
     mainNav.addEventListener("click", function (event) {
         if (event.target.hasAttribute("href")) toggleNav();
-    })
-}
+    });
+};
 window.addEventListener("resize", function (event) {
     if (window.innerWidth >= 768) resetNav();
-})
+});
 
 
 //Selection programs
 
-let fi = document.getElementById("filter-btn");
 
-if (fi) {
-    fi.addEventListener("click", function (event) {
+
+if (document.getElementById("filter-btn")) {
+    document.getElementById("filter-btn").addEventListener("click", function (event) {
     document.getElementById("filter-list").classList.toggle("active");   
     })
 };
@@ -158,20 +159,17 @@ function getCoursesById(array) {
 
 // sort
 
-const sortBtn = document.querySelector("#sort-btn");
-
-if (sortBtn){
-    sortBtn.addEventListener("click", function (event) {
+if (document.querySelector("#sort-btn")){
+    document.querySelector("#sort-btn").addEventListener("click", function (event) {
         document.getElementById("sort-list").classList.toggle("active");
 
     });
 };
   
 function sortByNewest(){
-const orderBtn = document.getElementById("newest")
-if (orderBtn){
+if (document.getElementById("newest")){
 
-      orderBtn.addEventListener("click", function (event){
+    document.getElementById("newest").addEventListener("click", function (event){
         event.preventDefault()
 
     const sortedCourse = Array.from( document.querySelectorAll("#course-list .course")).sort(function (a, b) {
@@ -190,9 +188,9 @@ if (orderBtn){
 }};
 
 function sortByOldest(){
-const decroissantBtn = document.getElementById("oldest");
-if (decroissantBtn){
-    decroissantBtn.addEventListener("click", function (event){
+    if (document.getElementById("oldest")){
+
+        document.getElementById("oldest").addEventListener("click", function (event){
         event.preventDefault()
         const sortedCourse1 = Array.from(document.querySelectorAll("#course-list .course")).sort(function(a,b){
             const ma = new Date(a.dataset.date);
@@ -203,9 +201,7 @@ if (decroissantBtn){
         sortedCourse1.forEach(course => {
             const c = new Date (course.dataset.date);
             document.getElementById("course-list").appendChild(course);  
-        });
-        
-
+        });      
     });
 }};
    
@@ -222,15 +218,35 @@ function searchBar() {
     let keywords = [];
     keywords = filter.split(" ");
         
-        keywords.forEach(keywords => {
+    keywords.forEach(keywords => {
         for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("h2")[0];
             txtValue = a.textContent || a.innerText;
 
-        if (txtValue.toUpperCase().indexOf(keywords) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        };
-    };
-})};
+            if (txtValue.toUpperCase().indexOf(keywords) > -1) {
+                 li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    })
+    noResult();
+}
+
+function noResult(){
+    
+    let nbrCours = 0;
+    let list = document.querySelectorAll("#course-list .course")
+    list.forEach(cours => {
+        if(cours.style.display == "none"){
+            nbrCours++;
+        }
+        if(nbrCours == list.length){
+            document.getElementById("no-result").classList.add("active")
+        }else{
+            document.getElementById("no-result").classList.remove("active");
+        }
+      
+    })
+ 
+}
