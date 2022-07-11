@@ -73,10 +73,10 @@ window.addEventListener("resize", function (event) {
 
 //Selection programs
 
-let fi = document.getElementById("filter-btn");
 
-if (fi) {
-    fi.addEventListener("click", function (event) {
+
+if (document.getElementById("filter-btn")) {
+    document.getElementById("filter-btn").addEventListener("click", function (event) {
     document.getElementById("filter-list").classList.toggle("active");   
     })
 };
@@ -158,20 +158,16 @@ function getCoursesById(array) {
 
 // sort
 
-const sortBtn = document.querySelector("#sort-btn");
-
-if (sortBtn){
-    sortBtn.addEventListener("click", function (event) {
+if (document.querySelector("#sort-btn")){
+    document.querySelector("#sort-btn").addEventListener("click", function (event) {
         document.getElementById("sort-list").classList.toggle("active");
 
     });
 };
   
 function sortByNewest(){
-const orderBtn = document.getElementById("croissant")
-if (orderBtn){
-
-      orderBtn.addEventListener("click", function (event){
+if (document.getElementById("croissant")){
+    document.getElementById("croissant").addEventListener("click", function (event){
         event.preventDefault()
 
     const sortedCourse = Array.from( document.querySelectorAll("#course-list .course")).sort(function (a, b) {
@@ -190,9 +186,8 @@ if (orderBtn){
 }};
 
 function sortByOldest(){
-const decroissantBtn = document.getElementById("decroissant");
-if (decroissantBtn){
-    decroissantBtn.addEventListener("click", function (event){
+    if (document.getElementById("decroissant")){
+    document.getElementById("decroissant").addEventListener("click", function (event){
         event.preventDefault()
         const sortedCourse1 = Array.from(document.querySelectorAll("#course-list .course")).sort(function(a,b){
             const ma = new Date(a.dataset.date);
@@ -203,9 +198,7 @@ if (decroissantBtn){
         sortedCourse1.forEach(course => {
             const c = new Date (course.dataset.date);
             document.getElementById("course-list").appendChild(course);  
-        });
-        
-
+        });      
     });
 }};
    
