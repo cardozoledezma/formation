@@ -11,13 +11,48 @@
 </head>
 
 <body class="container">
-    <header class="header">
-        
-    </header>
-    <div>
-        <h1 class="title">Cours de la Formation</h1>
-    </div>
+    <header class="home-header">
+        <div class="home-header-container home-container">
+            <h2 class="header-title">Web dev Formation</h1>
+            <nav class="navbar">
+                <ul id="main-nav" class="home-nav-list">
+                    <li class="home-nav-item">
+                        <a class="home-nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="home-nav-item">
+                        <a class="home-nav-link" href="cours.html">Cours</a>
+                    </li>
+                    <li class="home-nav-item">
+                        <a class="home-nav-link" href="planning/planning.html">Planning</a>
+                    </li>
+                </ul>
+                <button id="mobile-button" class="home-nav-burger">
+                    <i id="mobile-icon" class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+        </header>
     
+        <div class="filter-menu">
+            <div class="btn-list">
+            <div>
+            <button id="filter-btn" class="filter-btn">Filtrer</button>
+            <ul id="filter-list" class="filter-list">
+               
+               
+            </div>
+            <div>
+            <button id="sort-btn" class="sort-btn" >Trier</button>
+            <ul id="sort-list" class="sort-list">
+                <li><a id="newest" class="sort-newest-btn" href="">plus récent au plus ancien</a></li>
+                <li><a id="oldest" class="sort-oldest-btn" href="">plus ancien au plus récent</a></li>  
+                </ul>
+            </div>
+            
+            <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
+        </div>
         <main class="avalaible-course">
             <div class="filter-menu">
                 <div class="btn-list">
