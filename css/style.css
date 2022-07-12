@@ -419,11 +419,16 @@ a {
 }
 
 .course-content {
+    position: relative;
     align-self: flex-start;
     width: 100%;
     padding: 1px;
 }
 
+.favoris {
+
+
+}
 
 /* Logo Category */
 .img-list {
