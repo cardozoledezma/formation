@@ -11,10 +11,28 @@
 </head>
 
 <body class="container">
-    <header class="header">
-        <div>
-            <h1 class="title">Cours de la Formation</h1>
+    <header class="home-header">
+        <div class="home-header-container home-container">
+            <h2 class="header-title">Web dev Formation</h1>
+            <nav class="navbar">
+                <ul id="main-nav" class="home-nav-list">
+                    <li class="home-nav-item">
+                        <a class="home-nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="home-nav-item">
+                        <a class="home-nav-link" href="cours.html">Cours</a>
+                    </li>
+                    <li class="home-nav-item">
+                        <a class="home-nav-link" href="planning/planning.html">Planning</a>
+                    </li>
+                </ul>
+                <button id="mobile-button" class="home-nav-burger">
+                    <i id="mobile-icon" class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+            </nav>
         </div>
+        </header>
+    
         <div class="filter-menu">
             <div class="btn-list">
             <div>
@@ -35,7 +53,6 @@
             </div>
             <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
         </div>
-    </header>
         <main class="avalaible-course">
             <h3 class="no-result" id="no-result">no result</h3>
             <ul id="course-list"  class="course-list">

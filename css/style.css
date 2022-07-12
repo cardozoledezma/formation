@@ -1,15 +1,15 @@
 @import url(font-awesome.min.css);
-/* * // general */ 
+/* * // general */
 
 :root {
-    --background-color: rgba(86, 11, 173, 0.18);
-    --primary-color: #DECAED;
-    --secondary-color: #560BAD;
+    --background-color: #fff;
+    --primary-color: #000;
+    --secondary-color: ;
     --white: #FFF
 }
 
-*{
-    font-family:  Helvetica,Arial sans-serif;
+* {
+    font-family: Helvetica, Arial sans-serif;
     box-sizing: border-box;
 }
 
@@ -17,7 +17,12 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0;
 }
@@ -47,90 +52,117 @@ a {
     max-width: 1350px;
     margin: 0 auto;
 }
+
 .home-header {
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: 1px solid black ;
-    background-color: #570bad7a  ;
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
+
 .home-header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
 }
-.header-title{
+
+.header-title {
     display: flex;
     align-items: center;
     margin-left: 1rem;
-    font-size: 1.5rem;
-    color: #560BAD;
+    font-size: 33px;
+    font-weight: 700;
+    color: var(--background-color);
+    
 }
+
 .home-nav-burger {
     font-size: 3rem;
-    color: #560BAD;
+    color: var(--background-color);
     cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.home-nav-link {
+    color: var(--background-color);
 }
 .home-nav-link {
     color: #fff;
 }
 
 
-.home-main-container{
-    position: relative;
-    align-items: center;
-    z-index: -1;
-    top: 150px;
-}
-
-.home-title{
-    font-size: 3rem;
-    color: #560BAD;
-    text-align: center;
-}
-
-
-/* Project */   
-.container-title{
-    margin: 10px;
-    position: relative;
-    top: 170px;
-    color: #560BAD;
-}
-
-.avalaible-projects{
-    position: relative;
-    top: 11em;
-    padding: 20px 10px;
-    border-radius: 10px;
+.home-main-container {
+    background-image: url("../img/bg-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    height: 100vh;
     width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.list-of-projects{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding-bottom: 1vw;
-    row-gap: 20px;
-    padding: 30px;
-}
-
-.project{
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 180px;
-    height: 180px;
-    padding: 30px;
-    border-radius: 10px black;
-    border: 1px solid #560BAD;
 }
 
-.project-names{
-    text-align:center;
+.home-content {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(50px);
+    --webkit-backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-title {
+
+    font-size: 60px;
+    color: white;
+
+    text-align: center;
+    
+}
+
+
+/* Project */
+.container-title {
+    font-size:30px ;
+    padding: 10px 5px;
+    color: #000;
+}
+
+.avalaible-projects {
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.list-of-projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:10px;
+}
+
+.project {
+    width: 350px;
+    height: 280px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.227);
+}
+.project-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.project-names {
+   color: #fff;
+   font-size:40px ;
 }
 
 /* DISPLAY MOBIL */
@@ -146,7 +178,7 @@ a {
         left: 0;
         width: 100%;
         text-align: center;
-        background-color: #570bad7a;
+        background-color: rgba(0, 0, 0, 0.5);
         height: 100vh;
         transition: top .3s ease;
     }
@@ -166,7 +198,7 @@ a {
     }
 }
 
-/* DISPLAY DESKTOP */ 
+/* DISPLAY DESKTOP */
 
 @media screen and (min-width: 768px) {
     .list-of-projects {
@@ -187,7 +219,8 @@ a {
     .home-nav-link {
         display: inline-block;
         position: relative;
-        font-size: 1.5rem;
+        font-size: 40px;
+        font-weight: 700;
         transition: border .3s ease;
     }
 
@@ -196,10 +229,9 @@ a {
         display: block;
         height: .25rem;
         width: 0;
-        position: absolute;
         left: 0;
         bottom: -.5rem;
-        background-color: #560BAD;
+        background-color: var(--background-color);
         transition: width .3s ease;
     }
 
@@ -215,7 +247,25 @@ a {
     .home-nav-burger {
         display: none;
     }
+
+    .home-main-container {
+        background-image: url("../img/bg-desktop.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-attachment: fixed;
+        height: 100vh;
+        width: 100%;
+    }
+    .home-title{
+        font-size: 80px;
+    }
 }
+
+
+
+
+/* ONLINE COURSE PAGE */
 .no-result{
     display: none;
 }
@@ -223,51 +273,53 @@ a {
 
 .container{
     padding: 0;
+    padding-top: 50px;
     height: 100vh;
 }
 
 /* Header */
 
 
-.header{
-    margin-bottom:5px ;
-    padding:10px 15px ;
+.header {
+    margin-bottom: 5px;
+    padding: 10px 15px;
 }
 
-.title{
- font-size: 40px;
- text-align: start;
- margin-bottom: 5px;
+.title {
+    font-size: 40px;
+    text-align: start;
+    margin-bottom: 5px;
 }
 
 /* Navigation */
 
-.filter-menu{
+.filter-menu {
     display: flex;
     flex-direction: row-reverse;
     flex-direction: column;
     margin-bottom: 5px;
 }
 
-.btn-list{
+.btn-list {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
 }
 
-.filter-list{
+.filter-list {
     display: none;
     position: absolute;
-    z-index: 1;   
+    z-index: 1;
 }
 
-.filter{
+.filter {
     position: relative;
     display: inline-block;
 }
 
-.filter-btn, .sort-btn {
-    color:var(--white);
+.filter-btn,
+.sort-btn {
+    color: var(--white);
     background-color: var(--secondary-color);
     padding: 5px 20px;
     font-size: 25px;
@@ -276,15 +328,15 @@ a {
 }
 
 
-.search-btn{
+.search-btn {
     color: var(--secondary-color);
     font-size: 25px;
-    border:none ;
+    border: none;
     background: none;
 }
 
-.search-bar{
-    border:2px solid var(--secondary-color);
+.search-bar {
+    border: 2px solid var(--secondary-color);
     border-radius: 20px;
     font-size: 25px;
     padding: 5px 20px;
@@ -292,19 +344,20 @@ a {
 
 
 
-.sort-newest-btn, .sort-oldest-btn{
+.sort-newest-btn,
+.sort-oldest-btn {
     position: relative;
     display: inline-block;
 }
 
 
-.sort-list{
+.sort-list {
     display: none;
     position: absolute;
-    z-index: 1;   
+    z-index: 1;
 }
 
-.filter-link{
+.filter-link {
     color: var(--background-color);
     padding: 12px 16px;
     text-decoration: none;
@@ -312,9 +365,9 @@ a {
 }
 
 
-.btn-list1{
+.btn-list1 {
     display: flex;
-    
+
     margin-bottom: 10px;
 }
 
@@ -322,23 +375,23 @@ a {
 
 /* Main */
 
-.avalaible-course{
+.avalaible-course {
     display: flex;
-    background-color:var(--background-color);
+    background-color: var(--background-color);
     padding: 20px 10px;
     border-radius: 10px;
-    align-items: center; 
-    justify-content: center;    
+    align-items: center;
+    justify-content: center;
 }
 
 /* Main List */
 
-.course-list{
+.course-list {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;       
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-    padding-bottom: 1vw;   
+    padding-bottom: 1vw;
 }
 
 .course-title {
@@ -346,45 +399,45 @@ a {
     margin: 0;
     color: var(--secondary-color);
     text-align: center;
-   
+
 }
 
-.course{
+.course {
     display: flex;
     flex-direction: column;
-    background-color:var(--white) ;
+    background-color: var(--white);
     border-radius: 10px;
     box-shadow: 0px 2px rgba(0, 0, 0, 0.4);
     padding: 10px;
 }
 
-.div-course{
-    background-color:var(--primary-color) ;
+.div-course {
+    background-color: var(--primary-color);
     display: flex;
-    justify-content:left;
+    justify-content: left;
     align-items: center;
     padding: 10px;
     border-radius: 10px;
 }
 
- .course-content{
+.course-content {
     align-self: flex-start;
     width: 100%;
     padding: 1px;
-} 
+}
 
 
 /* Logo Category */
-.img-list{  
+.img-list {
     width: 70px
 }
 
-.course-description{
-    color: var(--secondary-color); 
+.course-description {
+    color: var(--secondary-color);
 }
 
 
-.link{
+.link {
     display: flex;
     margin: auto 0;
     justify-content: center;
@@ -398,69 +451,78 @@ a {
 /* DISPLAY MOBIL */
 
 @media screen and (max-width: 767px) {
-    .course-description{
-        display: none;  
+    .course-description {
+        display: none;
     }
 }
 
 /* DISPLAY DESKTOP */
- 
+
 @media screen and (min-width: 768px) {
-    .header{
-        padding:50px;
+    .header {
+        padding: 50px;
     }
-    .filter-menu{
+
+    .filter-menu {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
         gap: 10px;
     }
-    .btn-list{
+
+    .btn-list {
         margin: 0;
         gap: 10px;
     }
-    .search-btn{
+
+    .search-btn {
         display: none;
     }
-    .avalaible-course{
+
+    .avalaible-course {
         padding: 30px 30px;
         margin-bottom: 50px;
         padding-bottom: 1vw;
-    
+
     }
-    .course-list{
+
+    .course-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: center;
         gap: 15px;
     }
-    .course{
+
+    .course {
         align-items: center;
         flex-direction: row;
         width: 80%;
         gap: 10px;
     }
-    .course-content{
+
+    .course-content {
         height: 50%;
         padding: 5px;
     }
-    .div-course{
-      width: 180px;
-      height: 160px;
+
+    .div-course {
+        width: 180px;
+        height: 160px;
     }
-    .course-title{
+
+    .course-title {
         display: flex;
         align-items: flex-start;
         font-size: 17px;
-      }
+    }
 }
 
-.active{
-    display:block ;
+.active {
+    display: block;
 }
 
-.hide{
+.hide {
     display: none;
 }
