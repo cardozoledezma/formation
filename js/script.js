@@ -13,7 +13,7 @@ try {
         .then(response => response.json())
         .then(json => {
             courses = json;
-
+            getStorageFav()
             displayCourses()
             displayFilterList(getFilterList())
             manageCheckbox()
@@ -298,28 +298,25 @@ function addCourseToFav(course) {
         favList.push(course)
 
     }
-    storageFav()
+    setStorageFav()
 
 }
-function storageFav() {
+function setStorageFav() {
     favListJSON = JSON.stringify(favList)
     localStorage.setItem("favList", favListJSON)
     displayFavList();
 }
 function getStorageFav() {
-
+    
     return JSON.parse(localStorage.getItem("favList"))
 
 }
 function displayFavList() {
     let displayFav = "";
-    favList = getStorageFav()
-    favlist.forEach(course => {
+    
+    getStorageFav().forEach(course => {
         displayFav += `<li data-id="${course.id}">${course.name}</li>`
     })
     document.getElementById("displayfavlist").innerHTML = displayFav;
-
-
-
 
 }
