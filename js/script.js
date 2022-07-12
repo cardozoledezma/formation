@@ -1,5 +1,6 @@
 // json
 let courses;
+let favList = [];
 let fileImg = {
     pdf: "img/pdf.png",
     javascript: "img/js.png"
@@ -15,6 +16,7 @@ try {
             sortByNewest()
             sortByOldest()
             getActiveFilter()
+            manageFavButton()
        
 
         });
@@ -26,7 +28,7 @@ function displayCourses() {
     courses.forEach(course => {
        
         if (document.getElementById("course-list")){
-            document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p></div></li>`;
+            document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p><button data-id="${course.id}" class="favoris"></button></div></li>`;
         }
     })
 }
@@ -250,3 +252,35 @@ function noResult(){
     })
  
 }
+
+
+// Favoris
+
+function manageFavButton(){
+    document.querySelectorAll(".course .favoris").forEach(favButton => {
+        favButton.addEventListener("click", function(event){
+            addCourseToFav(getCourseFromId(this.dataset.id))
+        })
+    })
+}
+
+function getCourseFromId(id){
+    let data;
+    courses.forEach(course => {
+        if(course.id === parseInt(id)) data = course;
+    });
+    return data;
+}
+
+
+function addCourseToFav(course) {
+    if (favList.includes(course)) {
+        favList.splice(favList.indexOf(course), 1)
+    } else {
+        favList.push(course)
+    }
+    console.log(favList)
+}
+
+
+
