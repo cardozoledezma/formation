@@ -1,6 +1,7 @@
 // json
 let courses;
 let favList = [];
+let favListJSON;
 let fileImg = {
     pdf: "img/pdf.png",
     javascript: "img/js.png",
@@ -12,6 +13,7 @@ try {
         .then(response => response.json())
         .then(json => {
             courses = json;
+            displayFavList()
             displayCourses()
             displayFilterList(getFilterList())
             manageCheckbox()
@@ -291,15 +293,23 @@ function addCourseToFav(course) {
         favList.splice(favList.indexOf(course), 1)
     } else {
         favList.push(course)
+        
     }
-    console.log(favList)
-    displayFavList();
+    storageFav()
    
 }
-
+function storageFav(){
+favListJSON=JSON.stringify(favList)
+localStorage.setItem("favList",favListJSON)
+displayFavList();
+}
+function getStorageFav(){
+    console.log(JSON.parse(localStorage.getItem("favList")))
+    return JSON.parse(localStorage.getItem("favList"))
+ }
 function displayFavList(){
     let displayFav = "";
-    favList.forEach(course => {
+    getStorageFav().forEach(course => {
         displayFav += `<li data-id="${course.id}">${course.name}</li>`
     })
       document.getElementById("displayfavlist").innerHTML = displayFav;
