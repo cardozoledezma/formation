@@ -2,7 +2,9 @@
 let courses;
 let fileImg = {
     pdf: "img/pdf.png",
-    javascript: "img/js.png"
+    javascript: "img/js.png",
+    css:"img/css.png",
+    zip :"img/zip.png"
 }
 try {
     fetch("datas/courses.json")
@@ -15,7 +17,7 @@ try {
             sortByNewest()
             sortByOldest()
             getActiveFilter()
-       
+            displaySearchBar()
 
         });
 } catch (error) {
@@ -208,7 +210,16 @@ function sortByOldest(){
    
  
 //Search-bar keyword filter
-
+function displaySearchBar(){
+    document.getElementById("search-btn").addEventListener("click",function(event){
+        document.getElementById("search-bar").classList.toggle("active")
+    })
+    window.addEventListener("resize",function(event){
+        if(window.innerWidth>=768){
+            document.getElementById("search-bar").classList.remove("active")
+          }
+    })
+}
 function searchBar() {
     let input, filter, ul, li, a, txtValue;
     input = document.getElementById("search-bar");

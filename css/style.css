@@ -72,7 +72,7 @@ a {
     display: flex;
     align-items: center;
     margin-left: 1rem;
-    font-size: 33px;
+    font-size: 25px;
     font-weight: 700;
     color: var(--background-color);
     
@@ -296,6 +296,7 @@ a {
     flex-direction:column-reverse;
     margin-bottom: 5px;
     width: 100%;
+    gap:10px;
 }
 
 .btn-list {
@@ -319,10 +320,10 @@ a {
 .sort-btn {
     color: var(--black);
     background-color: var(--secondary-color);
-    padding: 5px 0px;
+    padding: 5px 10px;
     font-size: 25px;
     border-radius: 35px;
-    border: none;
+    border: 1px solid black;
 }
 
 
