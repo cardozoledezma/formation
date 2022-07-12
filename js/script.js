@@ -20,16 +20,16 @@ try {
         });
 } catch (error) {
     console.error("error" + error);
-};
+}
 
 function displayCourses() {
     courses.forEach(course => {
        
         if (document.getElementById("course-list")){
             document.getElementById("course-list").innerHTML += `<li class="course"  data-id="${course.id}" data-subject="${course.subject.join(" ")}" data-date="${course.date}"><div class="div-course" > <a class="link" href="${course.link}" download="${course.name}"  ><img src="${fileImg[course.filetype]}" alt="" class="img-list"></img></a></div> <div class="course-content"><h2 class="course-title">${course.name}</h2><p class="course-description">${course.description}</p> <p class="course-description course-date">${course.date}</p></div></li>`;
-        };
-    });
-};
+        }
+    })
+}
 
 // burger
 
@@ -42,34 +42,34 @@ function toggleBurger() {
         mobileIcon.classList.replace("fa-bars", "fa-chevron-up");
     } else {
         mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
-    };
-};
+    }
+}
 
 function toggleNav(event) {
     if (window.innerWidth >= 768) return;
     mainNav.classList.toggle("display");
     document.body.classList.toggle("overflow");
     toggleBurger();
-};
+}
 
 function resetNav() {
     if (mainNav) {
         mainNav.classList.remove("display");
         document.body.classList.remove("overflow");
         mobileIcon.classList.replace("fa-chevron-up", "fa-bars");
-    };
-};
+    }
+}
 
 if (mobileButton) {
     mobileButton.addEventListener("click", toggleNav);
 
     mainNav.addEventListener("click", function (event) {
         if (event.target.hasAttribute("href")) toggleNav();
-    });
-};
+    })
+}
 window.addEventListener("resize", function (event) {
     if (window.innerWidth >= 768) resetNav();
-});
+})
 
 
 //Selection programs
@@ -80,7 +80,7 @@ if (document.getElementById("filter-btn")) {
     document.getElementById("filter-btn").addEventListener("click", function (event) {
     document.getElementById("filter-list").classList.toggle("active");   
     })
-};
+}
 
 const courseList = document.querySelectorAll("#course-list .course");
 
@@ -91,27 +91,27 @@ function getFilterList() {
         course.subject.forEach(info => {
             if (!filterList.includes(info)) {
                 filterList.push(info)
-            };
-        });
-    });
+            }
+        })
+    })
     return filterList;
-};
+}
 
 function displayFilterList(array) {
     array.forEach(filter => {
         if (document.getElementById("filter-list")){
         document.getElementById("filter-list").innerHTML +=`<li ><input class="input" type="checkbox" id="${filter}" name="${filter}"><label for="${filter}">${filter}</label></li>`
-        };  
-    });
-};
+        } 
+    })
+}
 
 function manageCheckbox() {
     for (const filter of document.querySelectorAll("#filter-list .input")) {
         filter.addEventListener("change", function (event){
             getCoursesById(getIdBySubject())
-        }); 
-    };
-};
+        })
+    }
+}
 
 function getActiveFilter(){
     let activeFilter = []
@@ -123,26 +123,25 @@ function getActiveFilter(){
                 
             }else{
                 activeFilter.splice(activeFilter.indexOf(checkbox.name), 1)
-            };
-          
-    };  
+            }      
+    }
       return activeFilter;
-};
+}
 
 function hasFilters(course,array) {
    let i=0;
    array.forEach(filter=>{
        if (course.subject.includes(filter)) {
         i++         
-        };
+        }
    
-    });
+    })
     return  (i++ == array.length);
-};
+}
 
 function getIdBySubject(){
     return courses.filter(course=>hasFilters(course,getActiveFilter())).map(course=>course.id);
-};
+}
 
 function getCoursesById(array) {
     document.querySelectorAll("#course-list .course").forEach(course=> {
@@ -164,8 +163,8 @@ if (document.querySelector("#sort-btn")){
     document.querySelector("#sort-btn").addEventListener("click", function (event) {
         document.getElementById("sort-list").classList.toggle("active");
 
-    });
-};
+    })
+}
   
 function sortByNewest(){
 if (document.getElementById("newest")){
@@ -177,16 +176,16 @@ if (document.getElementById("newest")){
         const ma = new Date(a.dataset.date);
         const mb = new Date(b.dataset.date);
         return mb.getTime() - ma.getTime()
-    });
+    })
      
     sortedCourse.forEach(course => {
         const d = new Date (course.dataset.date)
 
         document.getElementById("course-list").appendChild(course)
 
-        });
-    });
-}};
+        })
+    })
+}}
 
 function sortByOldest(){
     if (document.getElementById("oldest")){
@@ -202,9 +201,9 @@ function sortByOldest(){
         sortedCourse1.forEach(course => {
             const c = new Date (course.dataset.date);
             document.getElementById("course-list").appendChild(course);  
-        });      
-    });
-}};
+        })   
+    })
+}}
    
    
  
