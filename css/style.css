@@ -293,21 +293,21 @@ a {
 
 .filter-menu {
     display: flex;
-    flex-direction: row-reverse;
-    flex-direction: column;
+    flex-direction:column-reverse;
     margin-bottom: 5px;
+    width: 100%;
 }
 
 .btn-list {
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
     margin-bottom: 10px;
 }
 
 .filter-list {
     display: none;
-    position: absolute;
-    z-index: 1;
+
 }
 
 .filter {
@@ -317,9 +317,9 @@ a {
 
 .filter-btn,
 .sort-btn {
-    color: var(--white);
+    color: var(--black);
     background-color: var(--secondary-color);
-    padding: 5px 20px;
+    padding: 5px 0px;
     font-size: 25px;
     border-radius: 35px;
     border: none;
@@ -351,8 +351,6 @@ a {
 
 .sort-list {
     display: none;
-    position: absolute;
-    z-index: 1;
 }
 
 .filter-link {
@@ -375,10 +373,11 @@ a {
 
 .avalaible-course {
     display: flex;
+    flex-direction: column-reverse;
     background-color: var(--background-color);
-    padding: 20px 10px;
+    padding: 40px 10px;
     border-radius: 10px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -405,7 +404,7 @@ a {
     flex-direction: column;
     background-color: var(--white);
     border-radius: 10px;
-    box-shadow: 0px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.4);
     padding: 10px;
 }
 
@@ -452,6 +451,9 @@ a {
     .course-description {
         display: none;
     }
+    .search-bar {
+        display: none;
+    }
 }
 
 /* DISPLAY DESKTOP */
@@ -460,18 +462,21 @@ a {
     .header {
         padding: 50px;
     }
-
-    .filter-menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
+    .filter-menu{
+        justify-content: flex-start;
+        align-items: flex-start;
         gap: 10px;
+        padding-top: 10px;
+        width: 50%;
     }
 
     .btn-list {
         margin: 0;
         gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .search-btn {
@@ -479,6 +484,9 @@ a {
     }
 
     .avalaible-course {
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: row;
         padding: 30px 30px;
         margin-bottom: 50px;
         padding-bottom: 1vw;
@@ -515,6 +523,26 @@ a {
         align-items: flex-start;
         font-size: 17px;
     }
+    .sort-btn{
+   
+    }
+    .sort-list{
+        display: block;
+    }
+    .filter-list{
+        display: block;        
+    }
+    .filter-btn,
+    .sort-btn {
+    padding: 5px 60px;
+}
+.filter-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 }
 
 .active {
