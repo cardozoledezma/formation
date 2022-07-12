@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" href="img/afpaimg.PNG">
     <title>Les Cours de la Formation</title>
 </head>
-
 <body class="container">
     <header class="home-header">
         <div class="home-header-container home-container">
@@ -33,36 +32,19 @@
         </div>
         </header>
     
-        <div class="filter-menu">
-            <div class="btn-list">
-            <div>
-            <button id="filter-btn" class="filter-btn">Filtrer</button>
-            <ul id="filter-list" class="filter-list">
-               
-               
-            </div>
-            <div>
-            <button id="sort-btn" class="sort-btn" >Trier</button>
-            <ul id="sort-list" class="sort-list">
-                <li><a id="newest" class="sort-newest-btn" href="">plus récent au plus ancien</a></li>
-                <li><a id="oldest" class="sort-oldest-btn" href="">plus ancien au plus récent</a></li>  
-                </ul>
-            </div>
-            
-            <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-            <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
-        </div>
         <main class="avalaible-course">
+
+            <h3 class="no-result" id="no-result">no result</h3>
+            <ul id="course-list"  class="course-list">
+               
+            </ul>
             <div class="filter-menu">
                 <div class="btn-list">
-                <div id="filter-div">
+                <div id="filter-div"class="filter-div">
                 <button id="filter-btn" class="filter-btn">Filtrer</button>
                 <ul id="filter-list" class="filter-list">
-                   
-                   
                 </div>
-                <div id="sort-div">
+                <div id="sort-div" class="sort-div">
                 <button id="sort-btn" class="sort-btn" >Trier</button>
                 <ul id="sort-list" class="sort-list">
                     <li><a id="newest" class="sort-newest-btn" href="">plus récent au plus ancien</a></li>
@@ -74,10 +56,6 @@
                 </div>
                 <input id="search-bar" onkeyup="searchBar()" class="search-bar" type="text" placeholder="Search.." data-search>
             </div>
-            <h3 class="no-result" id="no-result">no result</h3>
-            <ul id="course-list"  class="course-list">
-               
-            </ul>
     </main>
     <footer>
 
