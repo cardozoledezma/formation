@@ -271,6 +271,7 @@ function noResult(){
 function manageFavButton(){
     document.querySelectorAll(".course .favoris").forEach(favButton => {
         favButton.addEventListener("click", function(event){
+            console.log("hello")
             addCourseToFav(getCourseFromId(this.dataset.id))
         })
     })
@@ -292,7 +293,18 @@ function addCourseToFav(course) {
         favList.push(course)
     }
     console.log(favList)
+    displayFavList();
+   
 }
 
+function displayFavList(){
+    let displayFav = "";
+    favList.forEach(course => {
+        displayFav += `<li data-id="${course.id}">${course.name}</li>`
+    })
+      document.getElementById("displayfavlist").innerHTML = displayFav;
+    
 
 
+
+}
